@@ -1,0 +1,7 @@
+{
+ "CodeTransOceanDL": 1.0,
+ "SyntheticText2SQL": 0.9429157408989917,
+ "DS1000Retrieval": 0.928928928928929,
+ "CosQA": 0.852,
+ "CodeFeedbackST": 0.1573180859899061
+}

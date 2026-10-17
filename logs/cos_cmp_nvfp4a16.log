@@ -1,0 +1,8 @@
+[2026-10-12T11:24:25Z] START cmp-nvfp4a16
+nvfp4a16 vs bf16-vllm: FAIL (p5 < 0.98)
+  short_en      n= 500 median=0.98651 p5=0.98200 p1=0.98023 min=0.97875
+  long          n= 500 median=0.98002 p5=0.97589 p1=0.97411 min=0.97218
+  multilingual  n= 500 median=0.98026 p5=0.96754 p1=0.96300 min=0.95731
+  code          n= 500 median=0.97769 p5=0.96930 p1=0.96584 min=0.96314
+  all           n=2000 median=0.98093 p5=0.97023 p1=0.96624 min=0.95731
+[2026-10-12T11:24:25Z] END cmp-nvfp4a16 exit=0

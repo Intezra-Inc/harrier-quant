@@ -1,0 +1,321 @@
+{
+  "label": "vllm-bf16",
+  "engine": "vllm",
+  "model": "/data/models/harrier-oss-v1-27b",
+  "max_len": 8192,
+  "minutes": 106.2,
+  "tasks": {
+    "SciFact": {
+      "ndcg_at_10": 0.79946,
+      "recall_at_10": 0.94056,
+      "n_subsets": 1,
+      "seen_in_training": true,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.79946,
+          "recall_at_10": 0.94056
+        }
+      }
+    },
+    "NFCorpus": {
+      "ndcg_at_10": 0.41915,
+      "recall_at_10": 0.20559,
+      "n_subsets": 1,
+      "seen_in_training": true,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.41915,
+          "recall_at_10": 0.20559
+        }
+      }
+    },
+    "FiQA2018": {
+      "ndcg_at_10": 0.62209,
+      "recall_at_10": 0.69784,
+      "n_subsets": 1,
+      "seen_in_training": true,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.62209,
+          "recall_at_10": 0.69784
+        }
+      }
+    },
+    "ArguAna": {
+      "ndcg_at_10": 0.68136,
+      "recall_at_10": 0.93599,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.68136,
+          "recall_at_10": 0.93599
+        }
+      }
+    },
+    "SCIDOCS": {
+      "ndcg_at_10": 0.29072,
+      "recall_at_10": 0.31268,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.29072,
+          "recall_at_10": 0.31268
+        }
+      }
+    },
+    "LEMBSummScreenFDRetrieval": {
+      "ndcg_at_10": 0.98576,
+      "recall_at_10": 0.99702,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.98576,
+          "recall_at_10": 0.99702
+        }
+      }
+    },
+    "BelebeleRetrieval": {
+      "ndcg_at_10": 0.9494891891891892,
+      "recall_at_10": 0.9839345945945946,
+      "n_subsets": 37,
+      "seen_in_training": false,
+      "per_subset": {
+        "arb_Arab-arb_Arab": {
+          "ndcg_at_10": 0.94885,
+          "recall_at_10": 0.98444
+        },
+        "arb_Arab-eng_Latn": {
+          "ndcg_at_10": 0.96071,
+          "recall_at_10": 0.98778
+        },
+        "eng_Latn-arb_Arab": {
+          "ndcg_at_10": 0.9332,
+          "recall_at_10": 0.97778
+        },
+        "deu_Latn-deu_Latn": {
+          "ndcg_at_10": 0.95823,
+          "recall_at_10": 0.99
+        },
+        "deu_Latn-eng_Latn": {
+          "ndcg_at_10": 0.9593,
+          "recall_at_10": 0.99
+        },
+        "eng_Latn-deu_Latn": {
+          "ndcg_at_10": 0.95535,
+          "recall_at_10": 0.99
+        },
+        "eng_Latn-eng_Latn": {
+          "ndcg_at_10": 0.96791,
+          "recall_at_10": 0.99
+        },
+        "fra_Latn-fra_Latn": {
+          "ndcg_at_10": 0.96518,
+          "recall_at_10": 0.98889
+        },
+        "fra_Latn-eng_Latn": {
+          "ndcg_at_10": 0.9643,
+          "recall_at_10": 0.99
+        },
+        "eng_Latn-fra_Latn": {
+          "ndcg_at_10": 0.95535,
+          "recall_at_10": 0.98778
+        },
+        "hin_Deva-hin_Deva": {
+          "ndcg_at_10": 0.92509,
+          "recall_at_10": 0.97556
+        },
+        "hin_Deva-eng_Latn": {
+          "ndcg_at_10": 0.94298,
+          "recall_at_10": 0.98444
+        },
+        "eng_Latn-hin_Deva": {
+          "ndcg_at_10": 0.91684,
+          "recall_at_10": 0.96778
+        },
+        "jpn_Jpan-jpn_Jpan": {
+          "ndcg_at_10": 0.96088,
+          "recall_at_10": 0.98889
+        },
+        "jpn_Jpan-eng_Latn": {
+          "ndcg_at_10": 0.96659,
+          "recall_at_10": 0.98889
+        },
+        "eng_Latn-jpn_Jpan": {
+          "ndcg_at_10": 0.9422,
+          "recall_at_10": 0.98444
+        },
+        "kor_Hang-kor_Hang": {
+          "ndcg_at_10": 0.9535,
+          "recall_at_10": 0.98333
+        },
+        "kor_Hang-eng_Latn": {
+          "ndcg_at_10": 0.95627,
+          "recall_at_10": 0.98556
+        },
+        "eng_Latn-kor_Hang": {
+          "ndcg_at_10": 0.94029,
+          "recall_at_10": 0.98111
+        },
+        "por_Latn-por_Latn": {
+          "ndcg_at_10": 0.96256,
+          "recall_at_10": 0.98889
+        },
+        "por_Latn-eng_Latn": {
+          "ndcg_at_10": 0.96343,
+          "recall_at_10": 0.98889
+        },
+        "eng_Latn-por_Latn": {
+          "ndcg_at_10": 0.95563,
+          "recall_at_10": 0.98667
+        },
+        "rus_Cyrl-rus_Cyrl": {
+          "ndcg_at_10": 0.96169,
+          "recall_at_10": 0.99
+        },
+        "rus_Cyrl-eng_Latn": {
+          "ndcg_at_10": 0.96203,
+          "recall_at_10": 0.98889
+        },
+        "eng_Latn-rus_Cyrl": {
+          "ndcg_at_10": 0.95243,
+          "recall_at_10": 0.99
+        },
+        "spa_Latn-spa_Latn": {
+          "ndcg_at_10": 0.96416,
+          "recall_at_10": 0.98889
+        },
+        "spa_Latn-eng_Latn": {
+          "ndcg_at_10": 0.96526,
+          "recall_at_10": 0.98889
+        },
+        "eng_Latn-spa_Latn": {
+          "ndcg_at_10": 0.95731,
+          "recall_at_10": 0.98889
+        },
+        "swh_Latn-swh_Latn": {
+          "ndcg_at_10": 0.92011,
+          "recall_at_10": 0.96667
+        },
+        "swh_Latn-eng_Latn": {
+          "ndcg_at_10": 0.94803,
+          "recall_at_10": 0.98556
+        },
+        "eng_Latn-swh_Latn": {
+          "ndcg_at_10": 0.86644,
+          "recall_at_10": 0.93111
+        },
+        "tha_Thai-tha_Thai": {
+          "ndcg_at_10": 0.94182,
+          "recall_at_10": 0.98444
+        },
+        "tha_Thai-eng_Latn": {
+          "ndcg_at_10": 0.95867,
+          "recall_at_10": 0.98778
+        },
+        "eng_Latn-tha_Thai": {
+          "ndcg_at_10": 0.92645,
+          "recall_at_10": 0.97556
+        },
+        "zho_Hans-zho_Hans": {
+          "ndcg_at_10": 0.95807,
+          "recall_at_10": 0.98778
+        },
+        "zho_Hans-eng_Latn": {
+          "ndcg_at_10": 0.96096,
+          "recall_at_10": 0.98889
+        },
+        "eng_Latn-zho_Hans": {
+          "ndcg_at_10": 0.93303,
+          "recall_at_10": 0.98111
+        }
+      }
+    },
+    "MLQARetrieval": {
+      "ndcg_at_10": 0.7328573684210525,
+      "recall_at_10": 0.8433573684210527,
+      "n_subsets": 19,
+      "seen_in_training": false,
+      "per_subset": {
+        "ara-ara": {
+          "ndcg_at_10": 0.70646,
+          "recall_at_10": 0.82299
+        },
+        "ara-eng": {
+          "ndcg_at_10": 0.74906,
+          "recall_at_10": 0.86197
+        },
+        "deu-deu": {
+          "ndcg_at_10": 0.73928,
+          "recall_at_10": 0.84246
+        },
+        "deu-eng": {
+          "ndcg_at_10": 0.73875,
+          "recall_at_10": 0.84445
+        },
+        "eng-ara": {
+          "ndcg_at_10": 0.66982,
+          "recall_at_10": 0.79205
+        },
+        "eng-deu": {
+          "ndcg_at_10": 0.7563,
+          "recall_at_10": 0.86317
+        },
+        "eng-eng": {
+          "ndcg_at_10": 0.7374,
+          "recall_at_10": 0.84449
+        },
+        "eng-spa": {
+          "ndcg_at_10": 0.7428,
+          "recall_at_10": 0.8506
+        },
+        "eng-hin": {
+          "ndcg_at_10": 0.70239,
+          "recall_at_10": 0.82099
+        },
+        "eng-vie": {
+          "ndcg_at_10": 0.70807,
+          "recall_at_10": 0.82566
+        },
+        "eng-zho": {
+          "ndcg_at_10": 0.70998,
+          "recall_at_10": 0.83002
+        },
+        "spa-eng": {
+          "ndcg_at_10": 0.78115,
+          "recall_at_10": 0.88197
+        },
+        "spa-spa": {
+          "ndcg_at_10": 0.77192,
+          "recall_at_10": 0.87145
+        },
+        "hin-eng": {
+          "ndcg_at_10": 0.7522,
+          "recall_at_10": 0.86564
+        },
+        "hin-hin": {
+          "ndcg_at_10": 0.73176,
+          "recall_at_10": 0.84093
+        },
+        "vie-eng": {
+          "ndcg_at_10": 0.73356,
+          "recall_at_10": 0.84498
+        },
+        "vie-vie": {
+          "ndcg_at_10": 0.72219,
+          "recall_at_10": 0.83512
+        },
+        "zho-eng": {
+          "ndcg_at_10": 0.73598,
+          "recall_at_10": 0.84606
+        },
+        "zho-zho": {
+          "ndcg_at_10": 0.73522,
+          "recall_at_10": 0.83879
+        }
+      }
+    }
+  }
+}

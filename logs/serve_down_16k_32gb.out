@@ -1,0 +1,2 @@
+SERVE OK {"model": "w4a16-gptq-late12-attn-down", "max_len": 16384, "dim": 5376, "norms": [1.0, 1.0, 1.0], "q_doc_scores": [68.79, 34.58], "long_doc_tokens": 16384, "long_ok": true}
+rc=0

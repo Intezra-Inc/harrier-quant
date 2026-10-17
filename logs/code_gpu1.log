@@ -1,0 +1,3 @@
+[2026-10-12T15:13:21Z] START code-vllm-w4a16-gptq-late12-attn-g64 gpu1
+scripts/code_suite_h100.sh: line 8: 84428 Killed                  CUDA_VISIBLE_DEVICES=$g timeout 20h $S scripts/run_mteb.py --suite code --engine vllm --model $model --label $label > logs/mteb_$label.log 2>&1
+[2026-10-13T06:16:51Z] END code-vllm-w4a16-gptq-late12-attn-g64 exit=0

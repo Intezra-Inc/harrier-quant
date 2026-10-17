@@ -1,0 +1,21 @@
+{
+  "label": "bf16-vllm",
+  "engine": "vllm",
+  "model": "/data/models/harrier-oss-v1-27b",
+  "max_len": 8192,
+  "minutes": 4.2,
+  "tasks": {
+    "SciFact": {
+      "ndcg_at_10": 0.79946,
+      "recall_at_10": 0.94056,
+      "n_subsets": 1,
+      "seen_in_training": true,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.79946,
+          "recall_at_10": 0.94056
+        }
+      }
+    }
+  }
+}

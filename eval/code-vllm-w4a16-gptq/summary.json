@@ -1,0 +1,333 @@
+{
+  "label": "code-vllm-w4a16-gptq",
+  "engine": "vllm",
+  "model": "w4a16-gptq",
+  "max_len": 8192,
+  "minutes": 1077.6,
+  "tasks": {
+    "AppsRetrieval": {
+      "ndcg_at_10": 0.70947,
+      "recall_at_10": 0.83612,
+      "n_subsets": 1,
+      "seen_in_training": true,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.70947,
+          "recall_at_10": 0.83612
+        }
+      }
+    },
+    "CodeEditSearchRetrieval": {
+      "ndcg_at_10": 0.7626184615384616,
+      "recall_at_10": 0.8483846153846153,
+      "n_subsets": 13,
+      "seen_in_training": false,
+      "per_subset": {
+        "python": {
+          "ndcg_at_10": 0.78654,
+          "recall_at_10": 0.871
+        },
+        "javascript": {
+          "ndcg_at_10": 0.79609,
+          "recall_at_10": 0.883
+        },
+        "typescript": {
+          "ndcg_at_10": 0.79729,
+          "recall_at_10": 0.875
+        },
+        "go": {
+          "ndcg_at_10": 0.77474,
+          "recall_at_10": 0.866
+        },
+        "ruby": {
+          "ndcg_at_10": 0.79634,
+          "recall_at_10": 0.874
+        },
+        "java": {
+          "ndcg_at_10": 0.77362,
+          "recall_at_10": 0.851
+        },
+        "php": {
+          "ndcg_at_10": 0.75935,
+          "recall_at_10": 0.85
+        },
+        "c": {
+          "ndcg_at_10": 0.68379,
+          "recall_at_10": 0.765
+        },
+        "c++": {
+          "ndcg_at_10": 0.74169,
+          "recall_at_10": 0.829
+        },
+        "rust": {
+          "ndcg_at_10": 0.70201,
+          "recall_at_10": 0.793
+        },
+        "swift": {
+          "ndcg_at_10": 0.74703,
+          "recall_at_10": 0.83
+        },
+        "scala": {
+          "ndcg_at_10": 0.75451,
+          "recall_at_10": 0.86
+        },
+        "shell": {
+          "ndcg_at_10": 0.80104,
+          "recall_at_10": 0.882
+        }
+      }
+    },
+    "CodeFeedbackMT": {
+      "ndcg_at_10": 0.94802,
+      "recall_at_10": 0.97966,
+      "n_subsets": 1,
+      "seen_in_training": true,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.94802,
+          "recall_at_10": 0.97966
+        }
+      }
+    },
+    "CodeFeedbackST": {
+      "ndcg_at_10": 0.89058,
+      "recall_at_10": 0.98186,
+      "n_subsets": 1,
+      "seen_in_training": true,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.89058,
+          "recall_at_10": 0.98186
+        }
+      }
+    },
+    "CodeSearchNetCCRetrieval": {
+      "ndcg_at_10": 0.8045399999999999,
+      "recall_at_10": 0.9094000000000001,
+      "n_subsets": 6,
+      "seen_in_training": true,
+      "per_subset": {
+        "python": {
+          "ndcg_at_10": 0.86759,
+          "recall_at_10": 0.95207
+        },
+        "javascript": {
+          "ndcg_at_10": 0.78706,
+          "recall_at_10": 0.90368
+        },
+        "go": {
+          "ndcg_at_10": 0.80834,
+          "recall_at_10": 0.91394
+        },
+        "ruby": {
+          "ndcg_at_10": 0.81839,
+          "recall_at_10": 0.91594
+        },
+        "java": {
+          "ndcg_at_10": 0.82174,
+          "recall_at_10": 0.91748
+        },
+        "php": {
+          "ndcg_at_10": 0.72412,
+          "recall_at_10": 0.85329
+        }
+      }
+    },
+    "CodeSearchNetRetrieval": {
+      "ndcg_at_10": 0.8917716666666666,
+      "recall_at_10": 0.9561666666666667,
+      "n_subsets": 6,
+      "seen_in_training": true,
+      "per_subset": {
+        "python": {
+          "ndcg_at_10": 0.93762,
+          "recall_at_10": 0.993
+        },
+        "javascript": {
+          "ndcg_at_10": 0.82217,
+          "recall_at_10": 0.893
+        },
+        "go": {
+          "ndcg_at_10": 0.93148,
+          "recall_at_10": 0.988
+        },
+        "ruby": {
+          "ndcg_at_10": 0.87176,
+          "recall_at_10": 0.943
+        },
+        "java": {
+          "ndcg_at_10": 0.91607,
+          "recall_at_10": 0.969
+        },
+        "php": {
+          "ndcg_at_10": 0.87153,
+          "recall_at_10": 0.951
+        }
+      }
+    },
+    "CodeTransOceanContest": {
+      "ndcg_at_10": 0.93679,
+      "recall_at_10": 0.97738,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.93679,
+          "recall_at_10": 0.97738
+        }
+      }
+    },
+    "CodeTransOceanDL": {
+      "ndcg_at_10": 0.34259,
+      "recall_at_10": 0.80556,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.34259,
+          "recall_at_10": 0.80556
+        }
+      }
+    },
+    "CosQA": {
+      "ndcg_at_10": 0.36467,
+      "recall_at_10": 0.62,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.36467,
+          "recall_at_10": 0.62
+        }
+      }
+    },
+    "COIRCodeSearchNetRetrieval": {
+      "ndcg_at_10": 0.8577349999999999,
+      "recall_at_10": 0.9340716666666666,
+      "n_subsets": 6,
+      "seen_in_training": true,
+      "per_subset": {
+        "python": {
+          "ndcg_at_10": 0.96761,
+          "recall_at_10": 0.99256
+        },
+        "javascript": {
+          "ndcg_at_10": 0.79918,
+          "recall_at_10": 0.88757
+        },
+        "go": {
+          "ndcg_at_10": 0.8678,
+          "recall_at_10": 0.95284
+        },
+        "ruby": {
+          "ndcg_at_10": 0.8105,
+          "recall_at_10": 0.91039
+        },
+        "java": {
+          "ndcg_at_10": 0.8452,
+          "recall_at_10": 0.92287
+        },
+        "php": {
+          "ndcg_at_10": 0.85612,
+          "recall_at_10": 0.9382
+        }
+      }
+    },
+    "StackOverflowQA": {
+      "ndcg_at_10": 0.96853,
+      "recall_at_10": 0.99298,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.96853,
+          "recall_at_10": 0.99298
+        }
+      }
+    },
+    "SyntheticText2SQL": {
+      "ndcg_at_10": 0.62255,
+      "recall_at_10": 0.97556,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.62255,
+          "recall_at_10": 0.97556
+        }
+      }
+    },
+    "DS1000Retrieval": {
+      "ndcg_at_10": 0.6721,
+      "recall_at_10": 0.98448,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.6721,
+          "recall_at_10": 0.98448
+        }
+      }
+    },
+    "HumanEvalRetrieval": {
+      "ndcg_at_10": 0.96565,
+      "recall_at_10": 0.99367,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.96565,
+          "recall_at_10": 0.99367
+        }
+      }
+    },
+    "MBPPRetrieval": {
+      "ndcg_at_10": 0.92215,
+      "recall_at_10": 0.99179,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.92215,
+          "recall_at_10": 0.99179
+        }
+      }
+    },
+    "WikiSQLRetrieval": {
+      "ndcg_at_10": 0.89327,
+      "recall_at_10": 0.97363,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.89327,
+          "recall_at_10": 0.97363
+        }
+      }
+    },
+    "FreshStackRetrieval": {
+      "ndcg_at_10": 0.43417,
+      "recall_at_10": 0.40633,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.43417,
+          "recall_at_10": 0.40633
+        }
+      }
+    },
+    "SWEbenchCodeRetrieval": {
+      "ndcg_at_10": 0.04732,
+      "recall_at_10": 0.1165,
+      "n_subsets": 1,
+      "seen_in_training": false,
+      "per_subset": {
+        "default": {
+          "ndcg_at_10": 0.04732,
+          "recall_at_10": 0.1165
+        }
+      }
+    }
+  }
+}

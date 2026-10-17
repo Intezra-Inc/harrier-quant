@@ -1,0 +1,1 @@
+CTXG64 w4a16-gptq-late12-attn-g64_b22.7_graphs_8192 Available KV cache memory: 1.95 GiB | RESULT {"model": "w4a16-gptq-late12-attn-g64", "max_len": 8192, "budget_gib": 22.7, "eager": false, "chunked": 2048, "util": 0.2375, "ok": false, "error": "RuntimeError: 

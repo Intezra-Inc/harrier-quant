@@ -1,0 +1,7 @@
+The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+Loading weights:   0%|          | 0/808 [00:00<?, ?it/s]Loading weights: 100%|██████████| 808/808 [00:00<00:00, 9714.44it/s]
+Evaluating tasks:   0%|          | 0/1 [00:00<?, ?it/s]Evaluating task SciFact:   0%|          | 0/1 [00:00<?, ?it/s]Prompt type 'document' not found in task metadata for task 'SciFact'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'SciFact'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+Evaluating task SciFact: 100%|██████████| 1/1 [05:22<00:00, 322.95s/it]Evaluating task SciFact: 100%|██████████| 1/1 [05:22<00:00, 322.95s/it]
+SciFact                      nDCG@10=0.7966 R@10=0.9406 subsets=1

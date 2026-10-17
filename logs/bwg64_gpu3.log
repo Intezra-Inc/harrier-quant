@@ -1,0 +1,8 @@
+[2026-10-12T13:08:08Z] START bw cos w4a16-gptq-late12-attn-g64
+[2026-10-12T13:21:45Z] END bw cos exit=0
+bw-w4a16-gptq-late12-attn-g64 vs bw-bf16: PASS
+  short_en      n= 500 median=0.99656 p5=0.99409 p1=0.99314 min=0.99172
+  long          n= 500 median=0.99501 p5=0.99338 p1=0.99217 min=0.98877
+  multilingual  n= 500 median=0.99282 p5=0.98771 p1=0.98508 min=0.98355
+  code          n= 500 median=0.99370 p5=0.99023 p1=0.98907 min=0.98797
+  all           n=2000 median=0.99496 p5=0.98950 p1=0.98752 min=0.98355

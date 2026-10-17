@@ -1,0 +1,755 @@
+(MainProcess pid=84432) INFO 10-12 11:13:30 [api_utils.py:286] non-default args: {'runner': 'pooling', 'max_model_len': 8192, 'gpu_memory_utilization': 0.85, 'max_num_batched_tokens': 16384, 'disable_log_stats': True, 'enable_chunked_prefill': False, 'pooler_config': {'seq_pooling_type': 'LAST', 'use_activation': True}, 'model': 'w4a16-gptq'}
+(MainProcess pid=84432) INFO 10-12 11:13:30 [model.py:1328] Resolved `--convert auto` to `--convert embed`. Pass the value explicitly to silence this message.
+(MainProcess pid=84432) INFO 10-12 11:13:30 [model.py:699] Resolved architecture: Gemma3TextModel
+(MainProcess pid=84432) INFO 10-12 11:13:30 [config.py:1011] Found sentence-transformers modules configuration.
+(MainProcess pid=84432) INFO 10-12 11:13:30 [config.py:1034] Found pooling configuration.
+(MainProcess pid=84432) INFO 10-12 11:13:30 [model.py:2109] Using max model len 8192
+(MainProcess pid=84432) INFO 10-12 11:13:30 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=84432) WARNING 10-12 11:13:30 [vllm.py:1920] Pooling models do not support full cudagraphs. Overriding cudagraph_mode to PIECEWISE.
+(EngineCore pid=85753) INFO 10-12 11:13:38 [core.py:129] Initializing a V1 LLM engine (v0.31.0) with config: model='w4a16-gptq', speculative_config=None, tokenizer='w4a16-gptq', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=compressed-tensors, quantization_config=None, enforce_eager=False, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=w4a16-gptq, enable_prefix_caching=True, enable_chunked_prefill=False, pooler_config=PoolerConfig(task=None, pooling_type=None, seq_pooling_type='LAST', tok_pooling_type='ALL', use_activation=True, dimensions=None, enable_chunked_processing=False, max_embed_len=None, logit_mean=None, logit_sigma=None, step_tag_id=None, returned_token_ids=None), compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::qwen4_exp_ple_short_conv', 'vllm::qwen4_exp_qsa_with_output', 'vllm::linear_attention', 'vllm::qwen_gdn_attention_core', 'vllm::qwen_gdn_attention_core_fused_norm_packed', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.PIECEWISE: 1>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore pid=85753) INFO 10-12 11:13:38 [parallel_state.py:1825] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_969e0d9f0fbb483d8df67f057cba61b8 backend=nccl
+(EngineCore pid=85753) INFO 10-12 11:13:38 [parallel_state.py:2269] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=85753) INFO 10-12 11:13:38 [gpu_worker.py:479] Using V2 Model Runner
+(EngineCore pid=85753) INFO 10-12 11:13:40 [model_runner.py:375] Loading model from scratch...
+(EngineCore pid=85753) INFO 10-12 11:13:40 [__init__.py:758] Selected CutlassFP8ScaledMMLinearKernel for CompressedTensorsW8A8Fp8
+(EngineCore pid=85753) INFO 10-12 11:13:40 [deep_gemm.py:197] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230] Failed to set DeepGEMM PDL on vllm.third_party.deep_gemm: Assertion error (/workspace/.deps/deepgemm-src/third-party/deep_jit/include/deep_jit/backend/cuda/backend.hpp:200): not home_path.empty() and std::filesystem::exists(home_path)
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230] C++ trace (most recent call first):
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230]   #0 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x113d75 deep_jit::CUDA::find_cuda_toolkit(deep_jit::Env const&) at ??:0
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230]   #1 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x11b19a std::_Function_handler<std::shared_ptr<deep_jit::Runtime<deep_jit::CUDA> > (), deep_gemm::init_jit(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) at ??:0
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230]   #2 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x6b4de deep_jit::LazyInit<deep_jit::Runtime<deep_jit::CUDA> >::operator->() [clone .constprop.0] at ??:0
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230]   #3 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x6b6cc pybind11::cpp_function::initialize<deep_gemm::config::register_apis(pybind11::module_&)::{lambda(bool const&)#1}, void, bool const&, pybind11::name, pybind11::scope, pybind11::sibling>(deep_gemm::config::register_apis(pybind11::module_&)::{lambda(bool const&)#1}&&, void (*)(bool const&), pybind11::name const&, pybind11::scope const&, pybind11::sibling const&)::{lambda(pybind11::detail::function_call&)#1}::_FUN(pybind11::detail::function_call&) at ??:0
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230]   #4 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0xe0528 pybind11::cpp_function::dispatcher(_object*, _object* const*, unsigned long, _object*) at ??:0
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230]   #5 VLLM::EngineCore+0x1605ea6 cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.5263393066707181687 at ??:0
+(EngineCore pid=85753) WARNING 10-12 11:13:40 [deep_gemm.py:230] 
+(EngineCore pid=85753) INFO 10-12 11:13:40 [deep_gemm.py:136] DeepGEMM E8M0 enabled on current platform.
+(EngineCore pid=85753) INFO 10-12 11:13:40 [cuda.py:526] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=85753) INFO 10-12 11:13:40 [flash_attn.py:1167] Using FlashAttention version 3
+(EngineCore pid=85753) INFO 10-12 11:13:40 [__init__.py:870] Using MacheteLinearKernel for mixed-precision linear
+(EngineCore pid=85753) INFO 10-12 11:13:40 [compressed_tensors_wNa16.py:138] Using MacheteLinearKernel for CompressedTensorsWNA16
+(EngineCore pid=85753) INFO 10-12 11:13:41 [weight_utils.py:1063] Filesystem type for checkpoints: EXT4. Checkpoint size: 17.16 GiB. Available RAM: 223.22 GiB.
+(EngineCore pid=85753) INFO 10-12 11:13:41 [weight_utils.py:1086] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:03<00:00,  3.38s/it]
+Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:03<00:00,  3.38s/it]
+
+(EngineCore pid=85753) INFO 10-12 11:13:45 [default_loader.py:484] Loading weights took 4.00 seconds
+(EngineCore pid=85753) INFO 10-12 11:13:46 [model_runner.py:407] Model loading took 17.72 GiB memory and 6.550686 seconds
+(EngineCore pid=85753) INFO 10-12 11:13:46 [torch_utils.py:286] Reducing Torch threads from 64 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+(EngineCore pid=85753) INFO 10-12 11:13:46 [utils.py:343] Using LBNHC KV cache layout.
+(EngineCore pid=85753) INFO 10-12 11:13:48 [caching.py:342] reconstructed serializable fn from standalone compile artifacts. num_artifacts=8 num_submods=63
+(EngineCore pid=85753) INFO 10-12 11:13:48 [decorators.py:312] Directly load AOT compilation from path /home/user/.cache/vllm/torch_compile_cache/torch_aot_compile/2b12e6ba0f3eb26c6240eff5670064c25a186dfd0984967b0418b37ff85cf127/rank_0_0/model
+(EngineCore pid=85753) INFO 10-12 11:13:48 [monitor.py:53] torch.compile took 1.15 s in total
+(EngineCore pid=85753) INFO 10-12 11:13:51 [monitor.py:81] Initial profiling/warmup run took 2.94 s
+(EngineCore pid=85753) WARNING 10-12 11:13:52 [kv_cache_utils.py:1574] Add 8 padding layers, may waste at most 15.38% KV cache memory
+Capturing CUDA graphs (PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   2%|▏         | 1/51 [00:00<00:06,  7.53it/s]Capturing CUDA graphs (PIECEWISE):   4%|▍         | 2/51 [00:00<00:06,  7.73it/s]Capturing CUDA graphs (PIECEWISE):   6%|▌         | 3/51 [00:00<00:06,  7.90it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 4/51 [00:00<00:05,  8.08it/s]Capturing CUDA graphs (PIECEWISE):  10%|▉         | 5/51 [00:00<00:05,  8.21it/s]Capturing CUDA graphs (PIECEWISE):  12%|█▏        | 6/51 [00:00<00:05,  8.29it/s]Capturing CUDA graphs (PIECEWISE):  14%|█▎        | 7/51 [00:00<00:05,  8.40it/s]Capturing CUDA graphs (PIECEWISE):  16%|█▌        | 8/51 [00:00<00:05,  8.50it/s]Capturing CUDA graphs (PIECEWISE):  18%|█▊        | 9/51 [00:01<00:04,  8.60it/s]Capturing CUDA graphs (PIECEWISE):  20%|█▉        | 10/51 [00:01<00:04,  8.66it/s]Capturing CUDA graphs (PIECEWISE):  22%|██▏       | 11/51 [00:01<00:04,  8.75it/s]Capturing CUDA graphs (PIECEWISE):  24%|██▎       | 12/51 [00:01<00:04,  8.84it/s]Capturing CUDA graphs (PIECEWISE):  25%|██▌       | 13/51 [00:01<00:04,  8.91it/s]Capturing CUDA graphs (PIECEWISE):  27%|██▋       | 14/51 [00:01<00:04,  9.03it/s]Capturing CUDA graphs (PIECEWISE):  29%|██▉       | 15/51 [00:01<00:03,  9.09it/s]Capturing CUDA graphs (PIECEWISE):  31%|███▏      | 16/51 [00:01<00:03,  9.19it/s]Capturing CUDA graphs (PIECEWISE):  35%|███▌      | 18/51 [00:02<00:03, 10.15it/s]Capturing CUDA graphs (PIECEWISE):  39%|███▉      | 20/51 [00:02<00:02, 10.76it/s]Capturing CUDA graphs (PIECEWISE):  43%|████▎     | 22/51 [00:02<00:02, 11.16it/s]Capturing CUDA graphs (PIECEWISE):  47%|████▋     | 24/51 [00:02<00:02, 11.28it/s]Capturing CUDA graphs (PIECEWISE):  51%|█████     | 26/51 [00:02<00:02, 11.57it/s]Capturing CUDA graphs (PIECEWISE):  55%|█████▍    | 28/51 [00:02<00:01, 11.70it/s]Capturing CUDA graphs (PIECEWISE):  59%|█████▉    | 30/51 [00:03<00:01, 11.74it/s]Capturing CUDA graphs (PIECEWISE):  63%|██████▎   | 32/51 [00:03<00:01, 11.79it/s]Capturing CUDA graphs (PIECEWISE):  67%|██████▋   | 34/51 [00:03<00:01, 12.16it/s]Capturing CUDA graphs (PIECEWISE):  71%|███████   | 36/51 [00:03<00:01, 12.51it/s]Capturing CUDA graphs (PIECEWISE):  75%|███████▍  | 38/51 [00:03<00:01, 12.80it/s]Capturing CUDA graphs (PIECEWISE):  78%|███████▊  | 40/51 [00:03<00:00, 13.03it/s]Capturing CUDA graphs (PIECEWISE):  82%|████████▏ | 42/51 [00:03<00:00, 13.27it/s]Capturing CUDA graphs (PIECEWISE):  86%|████████▋ | 44/51 [00:04<00:00, 13.54it/s]Capturing CUDA graphs (PIECEWISE):  90%|█████████ | 46/51 [00:04<00:00, 13.81it/s]Capturing CUDA graphs (PIECEWISE):  94%|█████████▍| 48/51 [00:04<00:00, 14.00it/s]Capturing CUDA graphs (PIECEWISE):  98%|█████████▊| 50/51 [00:04<00:00, 14.20it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:04<00:00, 11.17it/s]
+(EngineCore pid=85753) INFO 10-12 11:13:58 [model_runner.py:1087] Graph capturing finished in 6 secs, took 0.58 GiB
+(EngineCore pid=85753) INFO 10-12 11:13:58 [gpu_worker.py:692] Available KV cache memory: 46.41 GiB
+(EngineCore pid=85753) INFO 10-12 11:13:58 [gpu_worker.py:707] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.8500 is equivalent to --gpu-memory-utilization=0.8426 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.8574. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(EngineCore pid=85753) WARNING 10-12 11:13:58 [kv_cache_utils.py:1574] Add 8 padding layers, may waste at most 15.38% KV cache memory
+(EngineCore pid=85753) INFO 10-12 11:13:58 [kv_cache_utils.py:2464] GPU KV cache size: 86,746 tokens, Maximum concurrency for 8,192 tokens per request: 10.59x
+(EngineCore pid=85753) INFO 10-12 11:13:58 [kernel_warmup.py:172] JIT kernel warmup starting.
+(EngineCore pid=85753) INFO 10-12 11:13:58 [kernel_warmup.py:185] JIT kernel warmup finished in 0.00s.
+Capturing CUDA graphs (PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   2%|▏         | 1/51 [00:00<00:06,  7.81it/s]Capturing CUDA graphs (PIECEWISE):   4%|▍         | 2/51 [00:00<00:05,  8.20it/s]Capturing CUDA graphs (PIECEWISE):   6%|▌         | 3/51 [00:00<00:05,  8.35it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 4/51 [00:00<00:05,  8.43it/s]Capturing CUDA graphs (PIECEWISE):  10%|▉         | 5/51 [00:00<00:05,  8.50it/s]Capturing CUDA graphs (PIECEWISE):  12%|█▏        | 6/51 [00:00<00:05,  8.60it/s]Capturing CUDA graphs (PIECEWISE):  14%|█▎        | 7/51 [00:00<00:05,  8.62it/s]Capturing CUDA graphs (PIECEWISE):  16%|█▌        | 8/51 [00:00<00:04,  8.69it/s]Capturing CUDA graphs (PIECEWISE):  18%|█▊        | 9/51 [00:01<00:04,  8.74it/s]Capturing CUDA graphs (PIECEWISE):  20%|█▉        | 10/51 [00:01<00:04,  8.84it/s]Capturing CUDA graphs (PIECEWISE):  22%|██▏       | 11/51 [00:01<00:04,  8.93it/s]Capturing CUDA graphs (PIECEWISE):  24%|██▎       | 12/51 [00:01<00:04,  9.03it/s]Capturing CUDA graphs (PIECEWISE):  25%|██▌       | 13/51 [00:01<00:04,  9.10it/s]Capturing CUDA graphs (PIECEWISE):  27%|██▋       | 14/51 [00:01<00:04,  9.13it/s]Capturing CUDA graphs (PIECEWISE):  29%|██▉       | 15/51 [00:01<00:03,  9.13it/s]Capturing CUDA graphs (PIECEWISE):  31%|███▏      | 16/51 [00:01<00:03,  9.25it/s]Capturing CUDA graphs (PIECEWISE):  35%|███▌      | 18/51 [00:01<00:03, 10.25it/s]Capturing CUDA graphs (PIECEWISE):  39%|███▉      | 20/51 [00:02<00:02, 10.85it/s]Capturing CUDA graphs (PIECEWISE):  43%|████▎     | 22/51 [00:02<00:02, 11.28it/s]Capturing CUDA graphs (PIECEWISE):  47%|████▋     | 24/51 [00:02<00:02, 11.36it/s]Capturing CUDA graphs (PIECEWISE):  51%|█████     | 26/51 [00:02<00:02, 10.89it/s]Capturing CUDA graphs (PIECEWISE):  55%|█████▍    | 28/51 [00:02<00:02, 10.72it/s]Capturing CUDA graphs (PIECEWISE):  59%|█████▉    | 30/51 [00:03<00:01, 10.60it/s]Capturing CUDA graphs (PIECEWISE):  63%|██████▎   | 32/51 [00:03<00:01, 10.72it/s]Capturing CUDA graphs (PIECEWISE):  67%|██████▋   | 34/51 [00:03<00:01, 11.46it/s]Capturing CUDA graphs (PIECEWISE):  71%|███████   | 36/51 [00:03<00:01, 11.99it/s]Capturing CUDA graphs (PIECEWISE):  75%|███████▍  | 38/51 [00:03<00:01, 12.29it/s]Capturing CUDA graphs (PIECEWISE):  78%|███████▊  | 40/51 [00:03<00:00, 12.23it/s]Capturing CUDA graphs (PIECEWISE):  82%|████████▏ | 42/51 [00:04<00:00, 12.66it/s]Capturing CUDA graphs (PIECEWISE):  86%|████████▋ | 44/51 [00:04<00:00, 13.02it/s]Capturing CUDA graphs (PIECEWISE):  90%|█████████ | 46/51 [00:04<00:00, 12.27it/s]Capturing CUDA graphs (PIECEWISE):  94%|█████████▍| 48/51 [00:04<00:00, 12.78it/s]Capturing CUDA graphs (PIECEWISE):  98%|█████████▊| 50/51 [00:04<00:00, 13.14it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:04<00:00, 10.86it/s]
+(EngineCore pid=85753) INFO 10-12 11:14:04 [model_runner.py:1087] Graph capturing finished in 6 secs, took 0.15 GiB
+(EngineCore pid=85753) INFO 10-12 11:14:04 [gpu_worker.py:892] CUDA graph pool memory: 0.15 GiB (actual), 0.58 GiB (estimated), difference: 0.43 GiB (288.3%).
+(EngineCore pid=85753) INFO 10-12 11:14:04 [gpu_worker.py:955] Free memory on device (78.76/79.22 GiB) on startup. Desired GPU memory utilization is (0.85, 67.34 GiB). Actual usage is 17.93 GiB for consumed memory (weights + non-torch), 3.01 GiB for peak activation, and 0.15 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=49508453069` (46.11 GiB) to fit into requested memory, or `--kv-cache-memory=61772774912` (57.53 GiB) to fully utilize gpu memory. Current kv cache memory in use is 46.41 GiB.
+(EngineCore pid=85753) INFO 10-12 11:14:05 [jit_monitor.py:84] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+(EngineCore pid=85753) INFO 10-12 11:14:05 [core.py:373] init engine (profile, create kv cache, warmup model) took 19.61 s (compilation: 1.15 s)
+(EngineCore pid=85753) INFO 10-12 11:14:05 [kv_cache_utils.py:772] kv cache group sizes [16, 16, 16, 16, 16, 16, 16]
+(EngineCore pid=85753) INFO 10-12 11:14:05 [kv_cache_utils.py:773] kv lcm block sizes 16
+(EngineCore pid=85753) INFO 10-12 11:14:05 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+(EngineCore pid=85753) INFO 10-12 11:14:05 [core.py:454] Resolved pooling config: pooling_type=LAST(source=user), tok_pooling_type=ALL(source=model_default), use_activation=True(source=user), supported_tasks=('embed', 'token_embed')
+(MainProcess pid=84432) INFO 10-12 11:14:08 [hf.py:646] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(MainProcess pid=84432) INFO 10-12 11:14:08 [offline.py:49] Supported pooling task: embed
+(MainProcess pid=84432) INFO 10-12 11:14:08 [io_processor.py:79] Loaded prompt prefixes for input_type: ['web_search_query', 'sts_query', 'bitext_query']
+The task 'AVMemeExamAT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'AVMemeExamAT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'ActivityNetCaptionsT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'ActivityNetCaptionsT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'AudioCapsAVVA2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'AudioCapsAVVA2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'AudioCapsAVVT2ARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'AudioCapsAVVT2ARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'MSVDT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'MSVDT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'VALOR32KT2VARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'VALOR32KT2VARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'VATEXV2ARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'VATEXV2ARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'VATEXVA2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'VATEXVA2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'VGGSoundAVA2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'VGGSoundAVA2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'YouCook2T2VARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'YouCook2T2VARetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'EgoSchemaVideoCentricQA' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'EgoSchemaVideoCentricQA' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'AVEDatasetClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'AVEDatasetClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'AVMemeAudioVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'AVMemeAudioVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'BreakfastClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'BreakfastClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'Kinetics700VA' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'Kinetics700VA' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'RAVDESSAVClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'RAVDESSAVClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'UCF101VideoAudioClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'UCF101VideoAudioClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'MELDEmotionAudioVideoClustering' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'MELDEmotionAudioVideoClustering' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'MusicAVQACLSAudioVideoClustering' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'MusicAVQACLSAudioVideoClustering' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'HumanAnimalCartoonVAPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'HumanAnimalCartoonVAPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'MusicAVQAVAPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'MusicAVQAVAPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'HMDB51ZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'HMDB51ZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'WorldSenseAudioVideoZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'WorldSenseAudioVideoZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'AVMemeExamT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'AVMemeExamT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'ActivityNetCaptionsT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+The task 'AudioCapsAVT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'AudioCapsAVT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'DiDeMoV2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'DiDeMoV2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'MSVDV2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'MSVDV2TRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'Panda70MT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'Panda70MT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'VALOR32KT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'VALOR32KT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'VATEXT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'VATEXT2VRetrieval' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'OmniVideoBenchVideoCentricQA' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/abstasks/retrieval.py:106: UserWarning: The task 'OmniVideoBenchVideoCentricQA' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  super().__init__(*args, **kwargs)
+The task 'AVMemeVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'AVMemeVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'BreakfastClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+The task 'Kinetics700V' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'Kinetics700V' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'VGGSoundV' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'VGGSoundV' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'RAVDESSVideoClustering' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'RAVDESSVideoClustering' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'HumanAnimalCartoonVPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'HumanAnimalCartoonVPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'Kinetics400ZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'Kinetics400ZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'MELDVideoZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'MELDVideoZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'UCF101VideoZeroShotClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'UCF101VideoZeroShotClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'WorldSenseVideoZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'WorldSenseVideoZeroShot' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'AVMemeVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+The task 'BreakfastClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+The task 'HMDB51Classification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'HMDB51Classification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'Kinetics600V' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'Kinetics600V' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'MELDVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'MELDVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'WorldSenseVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'WorldSenseVideoClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'HumanAnimalCartoonVPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+The task 'MusicAVQAVPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'MusicAVQAVPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+The task 'RAVDESSAVVPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/get_tasks.py:371: UserWarning: The task 'RAVDESSAVVPairClassification' is currently in beta. This means that the dataset is still being tested and may be subject to changes. This means that the scores of this dataset is liable to change and should be used with caution.
+  task = _TASKS_REGISTRY[task_name]()
+Evaluating tasks:   0%|          | 0/18 [00:00<?, ?it/s]Evaluating task AppsRetrieval:   0%|          | 0/18 [00:00<?, ?it/s]/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+Evaluating task AppsRetrieval:   6%|▌         | 1/18 [08:11<2:19:21, 491.83s/it]Evaluating task CodeEditSearchRetrieval:   6%|▌         | 1/18 [08:11<2:19:21, 491.83s/it]
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 48973.71 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 51775.14 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 51193.13 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 51193.75 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 53040.76 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 36439.89 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 52208.22 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 37048.88 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 52122.58 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 34369.40 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 35126.11 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 52456.34 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/1000 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 1000/1000 [00:00<00:00, 50863.48 examples/s]
+Evaluating task CodeEditSearchRetrieval:  11%|█         | 2/18 [14:51<1:56:38, 437.38s/it]Evaluating task CodeFeedbackMT:  11%|█         | 2/18 [14:51<1:56:38, 437.38s/it]         [W1012 12:42:25.683571472 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2657091584 bytes (free: 1836711936, total: 85064286208).
+Evaluating task CodeFeedbackMT:  17%|█▋        | 3/18 [1:42:06<10:57:04, 2628.31s/it]Evaluating task CodeFeedbackST:  17%|█▋        | 3/18 [1:42:06<10:57:04, 2628.31s/it][W1012 13:52:07.294422315 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6262095872 bytes (free: 391774208, total: 85064286208).
+[W1012 13:52:07.298199941 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6262095872 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+[W1012 14:35:58.165483374 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6262095872 bytes (free: 966393856, total: 85064286208).
+[W1012 14:35:58.165654049 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6262095872 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+[W1012 15:19:27.219272883 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6262095872 bytes (free: 966393856, total: 85064286208).
+[W1012 15:19:27.219517792 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 6262095872 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+Evaluating task CodeFeedbackST:  22%|██▏       | 4/18 [4:11:56<19:59:16, 5139.73s/it]Evaluating task CodeSearchNetCCRetrieval:  22%|██▏       | 4/18 [4:11:56<19:59:16, 5139.73s/it]
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5849/50000 [00:00<00:00, 58291.87 examples/s][A
+Standardizing text corpus format:  24%|██▎       | 11872/50000 [00:00<00:00, 59426.56 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 17919/50000 [00:00<00:00, 59896.93 examples/s][A
+Standardizing text corpus format:  53%|█████▎    | 26726/50000 [00:00<00:00, 59310.51 examples/s][A
+Standardizing text corpus format:  66%|██████▌   | 32865/50000 [00:00<00:00, 59972.63 examples/s][A
+Standardizing text corpus format:  78%|███████▊  | 39000/50000 [00:00<00:00, 60306.84 examples/s][A
+Standardizing text corpus format:  96%|█████████▌| 48115/50000 [00:00<00:00, 59693.43 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59699.19 examples/s]
+[W1012 15:42:20.266729738 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 15:42:20.266905548 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5889/50000 [00:00<00:00, 58685.36 examples/s][A
+Standardizing text corpus format:  24%|██▎       | 11798/50000 [00:00<00:00, 58914.91 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 17857/50000 [00:00<00:00, 59673.90 examples/s][A
+Standardizing text corpus format:  48%|████▊     | 24000/50000 [00:00<00:00, 59538.01 examples/s][A
+Standardizing text corpus format:  60%|██████    | 30000/50000 [00:00<00:00, 59557.34 examples/s][A
+Standardizing text corpus format:  72%|███████▏  | 36210/50000 [00:00<00:00, 60411.28 examples/s][A
+Standardizing text corpus format:  85%|████████▍ | 42417/50000 [00:00<00:00, 60923.10 examples/s][A
+Standardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 60030.82 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59850.50 examples/s]
+[W1012 15:53:32.741980655 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 15:53:32.742221765 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5856/50000 [00:00<00:00, 58347.63 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 11934/50000 [00:00<00:00, 59774.99 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 17937/50000 [00:00<00:00, 59888.56 examples/s][A
+Standardizing text corpus format:  54%|█████▍    | 27000/50000 [00:00<00:00, 59823.53 examples/s][A
+Standardizing text corpus format:  66%|██████▋   | 33198/50000 [00:00<00:00, 60510.58 examples/s][A
+Standardizing text corpus format:  79%|███████▉  | 39385/50000 [00:00<00:00, 60932.17 examples/s][A
+Standardizing text corpus format:  96%|█████████▋| 48155/50000 [00:00<00:00, 59938.72 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 60042.59 examples/s]
+[W1012 16:05:21.125177795 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 16:05:21.125358107 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6000/50000 [00:00<00:00, 58368.80 examples/s][A
+Standardizing text corpus format:  28%|██▊       | 13753/50000 [00:00<00:00, 39210.56 examples/s][A
+Standardizing text corpus format:  40%|███▉      | 19955/50000 [00:00<00:00, 46487.33 examples/s][A
+Standardizing text corpus format:  52%|█████▏    | 26102/50000 [00:00<00:00, 50483.03 examples/s][A
+Standardizing text corpus format:  65%|██████▍   | 32336/50000 [00:00<00:00, 54111.35 examples/s][A
+Standardizing text corpus format:  77%|███████▋  | 38618/50000 [00:00<00:00, 56758.53 examples/s][A
+Standardizing text corpus format:  90%|████████▉ | 44880/50000 [00:00<00:00, 58531.11 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 53698.86 examples/s]
+[W1012 16:16:26.095288403 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 16:16:26.095470567 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   7%|▋         | 3694/50000 [00:00<00:03, 12284.40 examples/s][A
+Standardizing text corpus format:  19%|█▉        | 9664/50000 [00:00<00:01, 27554.17 examples/s][A
+Standardizing text corpus format:  31%|███▏      | 15644/50000 [00:00<00:00, 37714.51 examples/s][A
+Standardizing text corpus format:  44%|████▎     | 21768/50000 [00:00<00:00, 45015.97 examples/s][A
+Standardizing text corpus format:  55%|█████▌    | 27631/50000 [00:00<00:00, 49195.52 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 33818/50000 [00:00<00:00, 53060.26 examples/s][A
+Standardizing text corpus format:  80%|███████▉  | 39923/50000 [00:00<00:00, 55481.32 examples/s][A
+Standardizing text corpus format:  97%|█████████▋| 48680/50000 [00:01<00:00, 56510.06 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 46517.23 examples/s]
+[W1012 16:27:40.650490966 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 16:27:40.650674507 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/30652 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  19%|█▊        | 5697/30652 [00:00<00:00, 56746.01 examples/s][A
+Standardizing text corpus format:  46%|████▌     | 14003/30652 [00:00<00:00, 54673.63 examples/s][A
+Standardizing text corpus format:  65%|██████▌   | 20000/30652 [00:00<00:00, 55904.02 examples/s][A
+Standardizing text corpus format:  93%|█████████▎| 28393/30652 [00:00<00:00, 55924.47 examples/s][AStandardizing text corpus format: 100%|██████████| 30652/30652 [00:00<00:00, 55920.82 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5839/50000 [00:00<00:00, 58209.22 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 11905/50000 [00:00<00:00, 59641.45 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 18000/50000 [00:00<00:00, 59917.84 examples/s][A
+Standardizing text corpus format:  48%|████▊     | 24123/50000 [00:00<00:00, 60429.33 examples/s][A
+Standardizing text corpus format:  61%|██████    | 30338/50000 [00:00<00:00, 61045.15 examples/s][A
+Standardizing text corpus format:  79%|███████▉  | 39394/50000 [00:00<00:00, 60747.95 examples/s][A
+Standardizing text corpus format:  91%|█████████▏| 45632/50000 [00:00<00:00, 61224.27 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 60742.15 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/15201 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  39%|███▊      | 5872/15201 [00:00<00:00, 58507.33 examples/s][A
+Standardizing text corpus format:  78%|███████▊  | 11861/15201 [00:00<00:00, 59316.33 examples/s][AStandardizing text corpus format: 100%|██████████| 15201/15201 [00:00<00:00, 58621.60 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5876/50000 [00:00<00:00, 58587.27 examples/s][A
+Standardizing text corpus format:  24%|██▎       | 11816/50000 [00:00<00:00, 59057.52 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 17788/50000 [00:00<00:00, 59357.83 examples/s][A
+Standardizing text corpus format:  48%|████▊     | 23868/50000 [00:00<00:00, 59926.10 examples/s][A
+Standardizing text corpus format:  66%|██████▌   | 32760/50000 [00:00<00:00, 59625.98 examples/s][A
+Standardizing text corpus format:  78%|███████▊  | 38784/50000 [00:00<00:00, 59809.36 examples/s][A
+Standardizing text corpus format:  90%|████████▉ | 44813/50000 [00:00<00:00, 59951.50 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59452.82 examples/s]
+[W1012 16:55:49.208527307 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+[W1012 16:55:49.208711632 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6026/50000 [00:00<00:00, 59593.13 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12251/50000 [00:00<00:00, 61141.86 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18560/50000 [00:00<00:00, 62024.26 examples/s][A
+Standardizing text corpus format:  50%|████▉     | 24875/50000 [00:00<00:00, 62462.89 examples/s][A
+Standardizing text corpus format:  62%|██████▏   | 31164/50000 [00:00<00:00, 62443.01 examples/s][A
+Standardizing text corpus format:  75%|███████▌  | 37547/50000 [00:00<00:00, 62910.66 examples/s][A
+Standardizing text corpus format:  88%|████████▊ | 43919/50000 [00:00<00:00, 63174.32 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 62231.43 examples/s]
+[W1012 17:02:35.938225914 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+[W1012 17:02:35.938394392 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   3%|▎         | 1694/50000 [00:00<00:04, 10643.54 examples/s][A
+Standardizing text corpus format:  15%|█▌        | 7640/50000 [00:00<00:01, 33732.90 examples/s][A
+Standardizing text corpus format:  27%|██▋       | 13700/50000 [00:00<00:00, 44562.80 examples/s][A
+Standardizing text corpus format:  40%|███▉      | 19886/50000 [00:00<00:00, 50881.63 examples/s][A
+Standardizing text corpus format:  51%|█████▏    | 25714/50000 [00:00<00:00, 53417.64 examples/s][A
+Standardizing text corpus format:  64%|██████▍   | 31921/50000 [00:00<00:00, 56261.68 examples/s][A
+Standardizing text corpus format:  76%|███████▌  | 38111/50000 [00:00<00:00, 58010.90 examples/s][A
+Standardizing text corpus format:  88%|████████▊ | 44107/50000 [00:00<00:00, 58617.90 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 52341.44 examples/s]
+[W1012 17:09:50.784468998 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+[W1012 17:09:50.784707424 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/32735 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   8%|▊         | 2694/32735 [00:00<00:01, 15825.92 examples/s][A
+Standardizing text corpus format:  26%|██▌       | 8548/32735 [00:00<00:00, 35313.67 examples/s][A
+Standardizing text corpus format:  44%|████▍     | 14389/32735 [00:00<00:00, 44426.00 examples/s][A
+Standardizing text corpus format:  62%|██████▏   | 20374/32735 [00:00<00:00, 49984.19 examples/s][A
+Standardizing text corpus format:  80%|████████  | 26259/32735 [00:00<00:00, 52994.68 examples/s][A
+Standardizing text corpus format:  99%|█████████▉| 32387/32735 [00:00<00:00, 55700.12 examples/s][AStandardizing text corpus format: 100%|██████████| 32735/32735 [00:00<00:00, 48314.78 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/27588 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  15%|█▌        | 4196/27588 [00:00<00:00, 41621.75 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 10135/27588 [00:00<00:00, 40232.16 examples/s][A
+Standardizing text corpus format:  59%|█████▊    | 16150/27588 [00:00<00:00, 40163.57 examples/s][A
+Standardizing text corpus format:  74%|███████▍  | 20508/27588 [00:00<00:00, 41251.86 examples/s][A
+Standardizing text corpus format:  90%|████████▉ | 24765/27588 [00:00<00:00, 41661.99 examples/s][AStandardizing text corpus format: 100%|██████████| 27588/27588 [00:00<00:00, 41281.72 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5823/50000 [00:00<00:00, 58052.75 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 11931/50000 [00:00<00:00, 59826.68 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 17915/50000 [00:00<00:00, 59694.91 examples/s][A
+Standardizing text corpus format:  48%|████▊     | 24018/50000 [00:00<00:00, 60215.05 examples/s][A
+Standardizing text corpus format:  60%|██████    | 30121/50000 [00:00<00:00, 60504.69 examples/s][A
+Standardizing text corpus format:  78%|███████▊  | 39200/50000 [00:00<00:00, 60507.75 examples/s][A
+Standardizing text corpus format:  91%|█████████ | 45331/50000 [00:00<00:00, 60740.85 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 60254.47 examples/s]
+[W1012 17:27:51.252849123 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+[W1012 17:27:51.253026100 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5840/50000 [00:00<00:00, 58186.00 examples/s][A
+Standardizing text corpus format:  24%|██▎       | 11802/50000 [00:00<00:00, 59025.23 examples/s][A
+Standardizing text corpus format:  41%|████▏     | 20700/50000 [00:00<00:00, 59185.17 examples/s][A
+Standardizing text corpus format:  53%|█████▎    | 26669/50000 [00:00<00:00, 59355.64 examples/s][A
+Standardizing text corpus format:  71%|███████   | 35516/50000 [00:00<00:00, 59191.03 examples/s][A
+Standardizing text corpus format:  83%|████████▎ | 41475/50000 [00:00<00:00, 59303.99 examples/s][A
+Standardizing text corpus format:  95%|█████████▌| 47514/50000 [00:00<00:00, 59618.75 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59338.25 examples/s]
+[W1012 17:35:49.691915555 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+[W1012 17:35:49.692102479 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  11%|█▏        | 5694/50000 [00:00<00:02, 21912.46 examples/s][A
+Standardizing text corpus format:  24%|██▎       | 11840/50000 [00:00<00:01, 35939.20 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 18000/50000 [00:00<00:00, 44033.32 examples/s][A
+Standardizing text corpus format:  48%|████▊     | 24141/50000 [00:00<00:00, 49622.67 examples/s][A
+Standardizing text corpus format:  61%|██████    | 30319/50000 [00:00<00:00, 53449.71 examples/s][A
+Standardizing text corpus format:  73%|███████▎  | 36257/50000 [00:00<00:00, 55286.73 examples/s][A
+Standardizing text corpus format:  85%|████████▍ | 42455/50000 [00:00<00:00, 57341.02 examples/s][A
+Standardizing text corpus format:  97%|█████████▋| 48639/50000 [00:00<00:00, 58710.72 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 50669.15 examples/s]
+[W1012 17:43:10.606492272 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+[W1012 17:43:10.606666568 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/31061 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  18%|█▊        | 5694/31061 [00:00<00:01, 21731.97 examples/s][A
+Standardizing text corpus format:  38%|███▊      | 11702/31061 [00:00<00:00, 35261.45 examples/s][A
+Standardizing text corpus format:  57%|█████▋    | 17616/31061 [00:00<00:00, 43261.40 examples/s][A
+Standardizing text corpus format:  76%|███████▋  | 23735/31061 [00:00<00:00, 49065.10 examples/s][A
+Standardizing text corpus format:  96%|█████████▌| 29879/31061 [00:00<00:00, 52976.18 examples/s][AStandardizing text corpus format: 100%|██████████| 31061/31061 [00:00<00:00, 45453.60 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5813/50000 [00:00<00:00, 57596.56 examples/s][A
+Standardizing text corpus format:  23%|██▎       | 11640/50000 [00:00<00:00, 57985.72 examples/s][A
+Standardizing text corpus format:  35%|███▌      | 17542/50000 [00:00<00:00, 58450.42 examples/s][A
+Standardizing text corpus format:  52%|█████▏    | 26184/50000 [00:00<00:00, 58029.36 examples/s][A
+Standardizing text corpus format:  64%|██████▍   | 32075/50000 [00:00<00:00, 58306.00 examples/s][A
+Standardizing text corpus format:  76%|███████▌  | 38000/50000 [00:00<00:00, 57972.80 examples/s][A
+Standardizing text corpus format:  88%|████████▊ | 44000/50000 [00:00<00:00, 58352.00 examples/s][A
+Standardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 58695.26 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 58293.80 examples/s]
+[W1012 17:58:23.726292504 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 17:58:23.726527322 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5829/50000 [00:00<00:00, 58076.13 examples/s][A
+Standardizing text corpus format:  23%|██▎       | 11704/50000 [00:00<00:00, 58471.55 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 17750/50000 [00:00<00:00, 59372.01 examples/s][A
+Standardizing text corpus format:  53%|█████▎    | 26602/50000 [00:00<00:00, 59190.04 examples/s][A
+Standardizing text corpus format:  65%|██████▌   | 32691/50000 [00:00<00:00, 59730.61 examples/s][A
+Standardizing text corpus format:  83%|████████▎ | 41559/50000 [00:00<00:00, 59477.07 examples/s][A
+Standardizing text corpus format:  95%|█████████▌| 47590/50000 [00:00<00:00, 59705.14 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59438.43 examples/s]
+[W1012 18:06:03.065123940 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 18:06:03.065298942 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   7%|▋         | 3694/50000 [00:00<00:03, 13742.45 examples/s][A
+Standardizing text corpus format:  19%|█▉        | 9696/50000 [00:00<00:01, 29798.69 examples/s][A
+Standardizing text corpus format:  32%|███▏      | 15899/50000 [00:00<00:00, 40478.21 examples/s][A
+Standardizing text corpus format:  44%|████▍     | 21992/50000 [00:00<00:00, 47045.91 examples/s][A
+Standardizing text corpus format:  56%|█████▋    | 28153/50000 [00:00<00:00, 51624.98 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 34136/50000 [00:00<00:00, 54168.11 examples/s][A
+Standardizing text corpus format:  81%|████████  | 40360/50000 [00:00<00:00, 56643.55 examples/s][A
+Standardizing text corpus format:  93%|█████████▎| 46647/50000 [00:00<00:00, 58538.95 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 48816.01 examples/s]
+[W1012 18:13:34.267943596 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 18:13:34.268126860 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   7%|▋         | 3694/50000 [00:00<00:03, 13853.65 examples/s][A
+Standardizing text corpus format:  19%|█▉        | 9669/50000 [00:00<00:01, 29863.02 examples/s][A
+Standardizing text corpus format:  32%|███▏      | 15860/50000 [00:00<00:00, 40521.52 examples/s][A
+Standardizing text corpus format:  44%|████▍     | 21884/50000 [00:00<00:00, 46869.00 examples/s][A
+Standardizing text corpus format:  56%|█████▌    | 28114/50000 [00:00<00:00, 51638.36 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 34104/50000 [00:00<00:00, 54195.98 examples/s][A
+Standardizing text corpus format:  81%|████████  | 40336/50000 [00:00<00:00, 56687.27 examples/s][A
+Standardizing text corpus format:  93%|█████████▎| 46533/50000 [00:00<00:00, 58294.42 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 48814.94 examples/s]
+[W1012 18:21:08.669267554 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 18:21:08.669442636 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5809/50000 [00:00<00:00, 57853.50 examples/s][A
+Standardizing text corpus format:  24%|██▎       | 11778/50000 [00:00<00:00, 58926.90 examples/s][A
+Standardizing text corpus format:  41%|████      | 20566/50000 [00:00<00:00, 58732.21 examples/s][A
+Standardizing text corpus format:  53%|█████▎    | 26637/50000 [00:00<00:00, 59412.26 examples/s][A
+Standardizing text corpus format:  71%|███████   | 35569/50000 [00:00<00:00, 59464.69 examples/s][A
+Standardizing text corpus format:  83%|████████▎ | 41651/50000 [00:00<00:00, 59851.17 examples/s][A
+Standardizing text corpus format:  95%|█████████▌| 47744/50000 [00:00<00:00, 60165.56 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59587.53 examples/s]
+[W1012 18:29:09.465207243 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 18:29:09.465379632 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/18237 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  20%|██        | 3694/18237 [00:00<00:01, 12326.68 examples/s][A
+Standardizing text corpus format:  52%|█████▏    | 9426/18237 [00:00<00:00, 26849.80 examples/s][A
+Standardizing text corpus format:  84%|████████▍ | 15348/18237 [00:00<00:00, 37064.21 examples/s][AStandardizing text corpus format: 100%|██████████| 18237/18237 [00:00<00:00, 33017.19 examples/s]
+Evaluating task CodeSearchNetCCRetrieval:  28%|██▊       | 5/18 [7:18:05<26:24:44, 7314.16s/it]Evaluating task CodeSearchNetRetrieval:  28%|██▊       | 5/18 [7:18:05<26:24:44, 7314.16s/it]  Evaluating task CodeSearchNetRetrieval:  33%|███▎      | 6/18 [7:22:20<16:22:44, 4913.72s/it]Evaluating task CodeTransOceanContest:  33%|███▎      | 6/18 [7:22:20<16:22:44, 4913.72s/it] Evaluating task CodeTransOceanContest:  39%|███▉      | 7/18 [7:23:45<10:11:26, 3335.18s/it]Evaluating task CodeTransOceanDL:  39%|███▉      | 7/18 [7:23:45<10:11:26, 3335.18s/it]     Evaluating task CodeTransOceanDL:  44%|████▍     | 8/18 [7:24:13<6:20:24, 2282.42s/it] Evaluating task CosQA:  44%|████▍     | 8/18 [7:24:13<6:20:24, 2282.42s/it]           Evaluating task CosQA:  50%|█████     | 9/18 [7:27:01<4:03:12, 1621.36s/it]Evaluating task COIRCodeSearchNetRetrieval:  50%|█████     | 9/18 [7:27:01<4:03:12, 1621.36s/it]
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5754/50000 [00:00<00:00, 57361.72 examples/s][A
+Standardizing text corpus format:  23%|██▎       | 11683/50000 [00:00<00:00, 58492.45 examples/s][A
+Standardizing text corpus format:  35%|███▌      | 17631/50000 [00:00<00:00, 58939.69 examples/s][A
+Standardizing text corpus format:  48%|████▊     | 23750/50000 [00:00<00:00, 59824.55 examples/s][A
+Standardizing text corpus format:  60%|█████▉    | 29838/50000 [00:00<00:00, 60203.85 examples/s][A
+Standardizing text corpus format:  77%|███████▋  | 38734/50000 [00:00<00:00, 59808.86 examples/s][A
+Standardizing text corpus format:  90%|████████▉ | 44848/50000 [00:00<00:00, 60194.67 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59778.10 examples/s]
+[W1012 18:56:59.880721131 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 964296704, total: 85064286208).
+[W1012 18:56:59.882359280 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6059/50000 [00:00<00:00, 59936.72 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12289/50000 [00:00<00:00, 61316.77 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18517/50000 [00:00<00:00, 61753.53 examples/s][A
+Standardizing text corpus format:  50%|████▉     | 24906/50000 [00:00<00:00, 62591.08 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 34091/50000 [00:00<00:00, 61911.02 examples/s][A
+Standardizing text corpus format:  81%|████████  | 40446/50000 [00:00<00:00, 62404.30 examples/s][A
+Standardizing text corpus format:  99%|█████████▉| 49671/50000 [00:00<00:00, 62042.14 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61789.65 examples/s]
+[W1012 19:04:07.714813122 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 19:04:07.714992401 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6135/50000 [00:00<00:00, 60112.92 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12369/50000 [00:00<00:00, 61406.27 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18563/50000 [00:00<00:00, 61645.14 examples/s][A
+Standardizing text corpus format:  50%|████▉     | 24874/50000 [00:00<00:00, 62218.50 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 34186/50000 [00:00<00:00, 61630.02 examples/s][A
+Standardizing text corpus format:  87%|████████▋ | 43522/50000 [00:00<00:00, 61866.02 examples/s][A
+Standardizing text corpus format: 100%|█████████▉| 49829/50000 [00:00<00:00, 62190.68 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61785.16 examples/s]
+[W1012 19:12:04.816732597 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 19:12:04.816918711 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   5%|▌         | 2694/50000 [00:00<00:05, 9287.77 examples/s][A
+Standardizing text corpus format:  17%|█▋        | 8748/50000 [00:00<00:01, 26199.19 examples/s][A
+Standardizing text corpus format:  30%|██▉       | 14917/50000 [00:00<00:00, 37566.68 examples/s][A
+Standardizing text corpus format:  42%|████▏     | 21093/50000 [00:00<00:00, 44795.88 examples/s][A
+Standardizing text corpus format:  55%|█████▍    | 27369/50000 [00:00<00:00, 50324.16 examples/s][A
+Standardizing text corpus format:  67%|██████▋   | 33267/50000 [00:00<00:00, 52965.68 examples/s][A
+Standardizing text corpus format:  79%|███████▉  | 39522/50000 [00:00<00:00, 55875.87 examples/s][A
+Standardizing text corpus format:  91%|█████████▏| 45746/50000 [00:00<00:00, 57798.20 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 47073.01 examples/s]
+[W1012 19:19:05.524597660 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 19:19:05.524777123 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   1%|          | 518/50000 [00:00<00:22, 2161.72 examples/s][A
+Standardizing text corpus format:  13%|█▎        | 6606/50000 [00:00<00:01, 24091.84 examples/s][A
+Standardizing text corpus format:  26%|██▌       | 12826/50000 [00:00<00:00, 37347.92 examples/s][A
+Standardizing text corpus format:  38%|███▊      | 18979/50000 [00:00<00:00, 45372.86 examples/s][A
+Standardizing text corpus format:  50%|█████     | 25234/50000 [00:00<00:00, 50898.15 examples/s][A
+Standardizing text corpus format:  63%|██████▎   | 31578/50000 [00:00<00:00, 54843.71 examples/s][A
+Standardizing text corpus format:  75%|███████▌  | 37611/50000 [00:00<00:00, 56542.37 examples/s][A
+Standardizing text corpus format:  88%|████████▊ | 43927/50000 [00:00<00:00, 58569.98 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 48182.41 examples/s]
+[W1012 19:26:02.546729875 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+[W1012 19:26:02.546911387 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2984247296 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/30310 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  20%|█▉        | 6000/30310 [00:00<00:00, 58954.58 examples/s][A
+Standardizing text corpus format:  42%|████▏     | 12805/30310 [00:00<00:00, 25375.26 examples/s][A
+Standardizing text corpus format:  62%|██████▏   | 18909/30310 [00:00<00:00, 34211.34 examples/s][A
+Standardizing text corpus format:  83%|████████▎ | 25133/30310 [00:00<00:00, 41530.80 examples/s][AStandardizing text corpus format: 100%|██████████| 30310/30310 [00:00<00:00, 40374.02 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5863/50000 [00:00<00:00, 58415.99 examples/s][A
+Standardizing text corpus format:  23%|██▎       | 11732/50000 [00:00<00:00, 58570.81 examples/s][A
+Standardizing text corpus format:  35%|███▌      | 17648/50000 [00:00<00:00, 58834.90 examples/s][A
+Standardizing text corpus format:  53%|█████▎    | 26429/50000 [00:00<00:00, 58685.37 examples/s][A
+Standardizing text corpus format:  65%|██████▍   | 32377/50000 [00:00<00:00, 58936.49 examples/s][A
+Standardizing text corpus format:  77%|███████▋  | 38376/50000 [00:00<00:00, 59264.85 examples/s][A
+Standardizing text corpus format:  94%|█████████▍| 47000/50000 [00:00<00:00, 58490.32 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 58700.74 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/14854 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  41%|████      | 6085/14854 [00:00<00:00, 60534.42 examples/s][A
+Standardizing text corpus format:  82%|████████▏ | 12248/14854 [00:00<00:00, 61171.37 examples/s][AStandardizing text corpus format: 100%|██████████| 14854/14854 [00:00<00:00, 61103.94 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5811/50000 [00:00<00:00, 57901.33 examples/s][A
+Standardizing text corpus format:  24%|██▎       | 11810/50000 [00:00<00:00, 59122.87 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 17863/50000 [00:00<00:00, 59762.99 examples/s][A
+Standardizing text corpus format:  54%|█████▎    | 26810/50000 [00:00<00:00, 59700.45 examples/s][A
+Standardizing text corpus format:  66%|██████▌   | 32911/50000 [00:00<00:00, 60115.08 examples/s][A
+Standardizing text corpus format:  78%|███████▊  | 38982/50000 [00:00<00:00, 60297.89 examples/s][A
+Standardizing text corpus format:  96%|█████████▌| 47884/50000 [00:00<00:00, 59911.17 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 59746.17 examples/s]
+[W1012 19:44:47.483554026 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+[W1012 19:44:47.483729996 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6151/50000 [00:00<00:00, 61289.55 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12459/50000 [00:00<00:00, 62332.86 examples/s][A
+Standardizing text corpus format:  38%|███▊      | 18828/50000 [00:00<00:00, 62948.89 examples/s][A
+Standardizing text corpus format:  57%|█████▋    | 28300/50000 [00:00<00:00, 63042.33 examples/s][A
+Standardizing text corpus format:  69%|██████▉   | 34657/50000 [00:00<00:00, 63208.59 examples/s][A
+Standardizing text corpus format:  82%|████████▏ | 41000/50000 [00:00<00:00, 62568.87 examples/s][A
+Standardizing text corpus format:  95%|█████████▍| 47378/50000 [00:00<00:00, 62937.65 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 62765.45 examples/s]
+[W1012 19:47:37.655115705 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+[W1012 19:47:37.655290224 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6201/50000 [00:00<00:00, 61790.85 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12495/50000 [00:00<00:00, 62457.82 examples/s][A
+Standardizing text corpus format:  38%|███▊      | 18848/50000 [00:00<00:00, 62942.97 examples/s][A
+Standardizing text corpus format:  57%|█████▋    | 28259/50000 [00:00<00:00, 62836.25 examples/s][A
+Standardizing text corpus format:  69%|██████▉   | 34659/50000 [00:00<00:00, 63205.52 examples/s][A
+Standardizing text corpus format:  88%|████████▊ | 43989/50000 [00:00<00:00, 62792.17 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 62783.06 examples/s]
+[W1012 19:50:38.616052756 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+[W1012 19:50:38.616238582 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1625292800 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/32440 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  11%|█▏        | 3694/32440 [00:00<00:01, 19817.65 examples/s][A
+Standardizing text corpus format:  30%|███       | 9743/32440 [00:00<00:00, 37462.56 examples/s][A
+Standardizing text corpus format:  49%|████▉     | 15962/32440 [00:00<00:00, 46920.84 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 21992/32440 [00:00<00:00, 51647.24 examples/s][A
+Standardizing text corpus format:  87%|████████▋ | 28162/32440 [00:00<00:00, 55016.52 examples/s][AStandardizing text corpus format: 100%|██████████| 32440/32440 [00:00<00:00, 49438.69 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/27570 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  21%|██        | 5835/27570 [00:00<00:00, 57887.02 examples/s][A
+Standardizing text corpus format:  42%|████▏     | 11674/27570 [00:00<00:00, 58180.00 examples/s][A
+Standardizing text corpus format:  74%|███████▍  | 20444/27570 [00:00<00:00, 58335.31 examples/s][A
+Standardizing text corpus format:  96%|█████████▌| 26405/27570 [00:00<00:00, 58773.77 examples/s][AStandardizing text corpus format: 100%|██████████| 27570/27570 [00:00<00:00, 58471.64 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5915/50000 [00:00<00:00, 58968.83 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 12127/50000 [00:00<00:00, 60815.04 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18277/50000 [00:00<00:00, 61120.42 examples/s][A
+Standardizing text corpus format:  49%|████▉     | 24426/50000 [00:00<00:00, 61265.01 examples/s][A
+Standardizing text corpus format:  61%|██████▏   | 30712/50000 [00:00<00:00, 61837.18 examples/s][A
+Standardizing text corpus format:  74%|███████▍  | 37000/50000 [00:00<00:00, 62170.56 examples/s][A
+Standardizing text corpus format:  87%|████████▋ | 43303/50000 [00:00<00:00, 62449.44 examples/s][A
+Standardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61908.07 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61599.59 examples/s]
+[W1012 20:05:32.518692189 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+[W1012 20:05:32.518867217 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6133/50000 [00:00<00:00, 60174.71 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12343/50000 [00:00<00:00, 61292.42 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18722/50000 [00:00<00:00, 62422.95 examples/s][A
+Standardizing text corpus format:  56%|█████▌    | 28082/50000 [00:00<00:00, 62405.98 examples/s][A
+Standardizing text corpus format:  69%|██████▉   | 34438/50000 [00:00<00:00, 62771.81 examples/s][A
+Standardizing text corpus format:  82%|████████▏ | 40790/50000 [00:00<00:00, 63004.18 examples/s][A
+Standardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 62487.90 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 62332.91 examples/s]
+[W1012 20:10:23.978218428 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+[W1012 20:10:23.978391884 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6041/50000 [00:00<00:00, 60165.63 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 12099/50000 [00:00<00:00, 60406.04 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18490/50000 [00:00<00:00, 62000.44 examples/s][A
+Standardizing text corpus format:  56%|█████▌    | 27775/50000 [00:00<00:00, 61945.81 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 34088/50000 [00:00<00:00, 62322.85 examples/s][A
+Standardizing text corpus format:  87%|████████▋ | 43410/50000 [00:00<00:00, 62248.06 examples/s][A
+Standardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61860.13 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61760.54 examples/s]
+[W1012 20:15:18.827703711 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+[W1012 20:15:18.827886660 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2191523840 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/30866 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  20%|█▉        | 6040/30866 [00:00<00:00, 59490.74 examples/s][A
+Standardizing text corpus format:  40%|███▉      | 12254/30866 [00:00<00:00, 61036.52 examples/s][A
+Standardizing text corpus format:  60%|██████    | 18553/30866 [00:00<00:00, 61920.45 examples/s][A
+Standardizing text corpus format:  90%|█████████ | 27836/30866 [00:00<00:00, 61896.95 examples/s][AStandardizing text corpus format: 100%|██████████| 30866/30866 [00:00<00:00, 61469.32 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 5989/50000 [00:00<00:00, 59338.73 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 12137/50000 [00:00<00:00, 60592.18 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18343/50000 [00:00<00:00, 61256.05 examples/s][A
+Standardizing text corpus format:  55%|█████▌    | 27615/50000 [00:00<00:00, 61526.70 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 33933/50000 [00:00<00:00, 62054.11 examples/s][A
+Standardizing text corpus format:  80%|████████  | 40181/50000 [00:00<00:00, 62184.24 examples/s][A
+Standardizing text corpus format:  93%|█████████▎| 46489/50000 [00:00<00:00, 62457.75 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61515.37 examples/s]
+[W1012 20:28:00.191451789 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 20:28:00.191629179 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6096/50000 [00:00<00:00, 60523.70 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 12188/50000 [00:00<00:00, 60748.94 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18431/50000 [00:00<00:00, 61508.00 examples/s][A
+Standardizing text corpus format:  49%|████▉     | 24685/50000 [00:00<00:00, 61913.26 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 33951/50000 [00:00<00:00, 61842.99 examples/s][A
+Standardizing text corpus format:  80%|████████  | 40156/50000 [00:00<00:00, 61901.17 examples/s][A
+Standardizing text corpus format:  93%|█████████▎| 46447/50000 [00:00<00:00, 62206.06 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61537.41 examples/s]
+[W1012 20:32:46.570696760 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 20:32:46.570867068 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6093/50000 [00:00<00:00, 60251.31 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12358/50000 [00:00<00:00, 61648.59 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18536/50000 [00:00<00:00, 61705.59 examples/s][A
+Standardizing text corpus format:  50%|████▉     | 24861/50000 [00:00<00:00, 62310.67 examples/s][A
+Standardizing text corpus format:  68%|██████▊   | 34195/50000 [00:00<00:00, 62216.90 examples/s][A
+Standardizing text corpus format:  81%|████████  | 40555/50000 [00:00<00:00, 62633.97 examples/s][A
+Standardizing text corpus format:  94%|█████████▍| 46887/50000 [00:00<00:00, 62838.91 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 61991.39 examples/s]
+[W1012 20:37:33.667063649 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 20:37:33.667294624 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  12%|█▏        | 6169/50000 [00:00<00:00, 60895.02 examples/s][A
+Standardizing text corpus format:  28%|██▊       | 13873/50000 [00:00<00:00, 40539.07 examples/s][A
+Standardizing text corpus format:  40%|████      | 20189/50000 [00:00<00:00, 47889.56 examples/s][A
+Standardizing text corpus format:  53%|█████▎    | 26393/50000 [00:00<00:00, 52375.95 examples/s][A
+Standardizing text corpus format:  65%|██████▌   | 32734/50000 [00:00<00:00, 55813.57 examples/s][A
+Standardizing text corpus format:  78%|███████▊  | 39060/50000 [00:00<00:00, 58105.67 examples/s][A
+Standardizing text corpus format:  91%|█████████ | 45452/50000 [00:00<00:00, 59881.49 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:00<00:00, 55336.97 examples/s]
+[W1012 20:42:30.927166995 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 20:42:30.927344891 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  11%|█▏        | 5694/50000 [00:00<00:02, 17662.12 examples/s][A
+Standardizing text corpus format:  24%|██▍       | 11999/50000 [00:00<00:01, 31596.64 examples/s][A
+Standardizing text corpus format:  36%|███▌      | 18116/50000 [00:00<00:00, 40611.56 examples/s][A
+Standardizing text corpus format:  49%|████▊     | 24351/50000 [00:00<00:00, 47205.38 examples/s][A
+Standardizing text corpus format:  61%|██████▏   | 30747/50000 [00:00<00:00, 52270.22 examples/s][A
+Standardizing text corpus format:  74%|███████▍  | 37106/50000 [00:00<00:00, 55681.44 examples/s][A
+Standardizing text corpus format:  87%|████████▋ | 43495/50000 [00:00<00:00, 58151.15 examples/s][A
+Standardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 59060.33 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 48546.04 examples/s]
+[W1012 20:47:28.781602479 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+[W1012 20:47:28.781776526 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2803892224 bytes (free: 966393856, total: 85064286208).
+Ran out of memory computing similarity on cuda, falling back to CPU.
+
+Standardizing text corpus format:   0%|          | 0/17725 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  35%|███▍      | 6134/17725 [00:00<00:00, 60879.07 examples/s][A
+Standardizing text corpus format:  70%|██████▉   | 12350/17725 [00:00<00:00, 61622.58 examples/s][AStandardizing text corpus format: 100%|██████████| 17725/17725 [00:00<00:00, 61477.94 examples/s]
+Evaluating task COIRCodeSearchNetRetrieval:  56%|█████▌    | 10/18 [9:35:23<7:46:28, 3498.54s/it]Evaluating task StackOverflowQA:  56%|█████▌    | 10/18 [9:35:23<7:46:28, 3498.54s/it]           Evaluating task StackOverflowQA:  61%|██████    | 11/18 [9:51:23<5:17:31, 2721.68s/it]Evaluating task SyntheticText2SQL:  61%|██████    | 11/18 [9:51:23<5:17:31, 2721.68s/it]Evaluating task SyntheticText2SQL:  67%|██████▋   | 12/18 [10:00:58<3:26:51, 2068.58s/it]Evaluating task DS1000Retrieval:  67%|██████▋   | 12/18 [10:00:58<3:26:51, 2068.58s/it]  Evaluating task DS1000Retrieval:  72%|███████▏  | 13/18 [10:02:15<2:02:07, 1465.41s/it]Evaluating task HumanEvalRetrieval:  72%|███████▏  | 13/18 [10:02:15<2:02:07, 1465.41s/it]
+Standardizing text corpus format:   0%|          | 0/158 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 158/158 [00:00<00:00, 28188.01 examples/s]
+Evaluating task HumanEvalRetrieval:  78%|███████▊  | 14/18 [10:02:20<1:08:16, 1024.17s/it]Evaluating task MBPPRetrieval:  78%|███████▊  | 14/18 [10:02:20<1:08:16, 1024.17s/it]     
+Standardizing text corpus format:   0%|          | 0/974 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 974/974 [00:00<00:00, 37959.97 examples/s]
+Evaluating task MBPPRetrieval:  83%|████████▎ | 15/18 [10:02:34<35:59, 719.73s/it]   Evaluating task WikiSQLRetrieval:  83%|████████▎ | 15/18 [10:02:34<35:59, 719.73s/it]Evaluating task WikiSQLRetrieval:  89%|████████▉ | 16/18 [10:05:41<18:38, 559.23s/it]Evaluating task FreshStackRetrieval:  89%|████████▉ | 16/18 [10:05:41<18:38, 559.23s/it]Evaluating task FreshStackRetrieval:  94%|█████████▍| 17/18 [10:17:49<10:10, 610.09s/it]Evaluating task SWEbenchCodeRetrieval:  94%|█████████▍| 17/18 [10:17:49<10:10, 610.09s/it]Prompt type 'document' not found in task metadata for task 'SWEbenchCodeRetrieval'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'SWEbenchCodeRetrieval'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+Prompt type 'document' not found in task metadata for task 'SWEbenchCodeRetrieval'.
+Evaluating task SWEbenchCodeRetrieval: 100%|██████████| 18/18 [17:56:52<00:00, 8703.21s/it]Evaluating task SWEbenchCodeRetrieval: 100%|██████████| 18/18 [17:56:52<00:00, 3589.59s/it]
+AppsRetrieval                nDCG@10=0.7095 R@10=0.8361 subsets=1
+CodeEditSearchRetrieval      nDCG@10=0.7626 R@10=0.8484 subsets=13
+CodeFeedbackMT               nDCG@10=0.9480 R@10=0.9797 subsets=1
+CodeFeedbackST               nDCG@10=0.8906 R@10=0.9819 subsets=1
+CodeSearchNetCCRetrieval     nDCG@10=0.8045 R@10=0.9094 subsets=6
+CodeSearchNetRetrieval       nDCG@10=0.8918 R@10=0.9562 subsets=6
+CodeTransOceanContest        nDCG@10=0.9368 R@10=0.9774 subsets=1
+CodeTransOceanDL             nDCG@10=0.3426 R@10=0.8056 subsets=1
+CosQA                        nDCG@10=0.3647 R@10=0.6200 subsets=1
+COIRCodeSearchNetRetrieval   nDCG@10=0.8577 R@10=0.9341 subsets=6
+StackOverflowQA              nDCG@10=0.9685 R@10=0.9930 subsets=1
+SyntheticText2SQL            nDCG@10=0.6226 R@10=0.9756 subsets=1
+DS1000Retrieval              nDCG@10=0.6721 R@10=0.9845 subsets=1
+HumanEvalRetrieval           nDCG@10=0.9657 R@10=0.9937 subsets=1
+MBPPRetrieval                nDCG@10=0.9222 R@10=0.9918 subsets=1
+WikiSQLRetrieval             nDCG@10=0.8933 R@10=0.9736 subsets=1
+FreshStackRetrieval          nDCG@10=0.4342 R@10=0.4063 subsets=1
+SWEbenchCodeRetrieval        nDCG@10=0.0473 R@10=0.1165 subsets=1

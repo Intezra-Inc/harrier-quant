@@ -1,0 +1,10 @@
+[2026-10-12T12:02:16Z] START build w4a16-gptq-late12-attn gpu0
+[2026-10-12T12:16:23Z] END build w4a16-gptq-late12-attn exit=0
+[2026-10-12T12:16:23Z] START cos w4a16-gptq-late12-attn
+[2026-10-12T12:23:59Z] END cos w4a16-gptq-late12-attn exit=0
+w4a16-gptq-late12-attn vs bf16-vllm: FAIL (p5 < 0.98)
+  short_en      n= 500 median=0.99557 p5=0.99251 p1=0.99129 min=0.98925
+  long          n= 500 median=0.99384 p5=0.99219 p1=0.99116 min=0.98991
+  multilingual  n= 500 median=0.98926 p5=0.97706 p1=0.97254 min=0.97035
+  code          n= 500 median=0.99238 p5=0.98854 p1=0.98685 min=0.98478
+  all           n=2000 median=0.99378 p5=0.98144 p1=0.97683 min=0.97035

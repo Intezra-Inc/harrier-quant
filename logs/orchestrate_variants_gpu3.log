@@ -1,0 +1,2 @@
+[2026-10-12T11:13:14Z] SKIP mteb-vllm-w4a16-gptq (cosine gate failed or embedding failed)
+[2026-10-12T11:24:34Z] SKIP mteb-vllm-nvfp4a16 (cosine gate failed or embedding failed)

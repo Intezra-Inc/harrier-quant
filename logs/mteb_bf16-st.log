@@ -1,0 +1,187 @@
+The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+Loading weights:   0%|          | 0/808 [00:00<?, ?it/s]Loading weights: 100%|██████████| 808/808 [00:00<00:00, 10166.36it/s]
+Evaluating tasks:   0%|          | 0/8 [00:00<?, ?it/s]Evaluating task SciFact:   0%|          | 0/8 [00:00<?, ?it/s]Evaluating task NFCorpus:   0%|          | 0/8 [00:00<?, ?it/s]
+Generating train split:   0%|          | 0/110575 [00:00<?, ? examples/s][AGenerating train split: 100%|██████████| 110575/110575 [00:00<00:00, 1923158.94 examples/s]
+
+Generating dev split:   0%|          | 0/11385 [00:00<?, ? examples/s][AGenerating dev split: 100%|██████████| 11385/11385 [00:00<00:00, 1284626.90 examples/s]
+
+Generating test split:   0%|          | 0/12334 [00:00<?, ? examples/s][AGenerating test split: 100%|██████████| 12334/12334 [00:00<00:00, 1084607.95 examples/s]
+
+Casting the dataset:   0%|          | 0/12334 [00:00<?, ? examples/s][ACasting the dataset: 100%|██████████| 12334/12334 [00:00<00:00, 1881183.47 examples/s]
+
+Generating corpus split:   0%|          | 0/3633 [00:00<?, ? examples/s][AGenerating corpus split: 100%|██████████| 3633/3633 [00:00<00:00, 100055.86 examples/s]
+
+Casting the dataset:   0%|          | 0/3633 [00:00<?, ? examples/s][ACasting the dataset: 100%|██████████| 3633/3633 [00:00<00:00, 318132.42 examples/s]
+
+Generating queries split:   0%|          | 0/3237 [00:00<?, ? examples/s][AGenerating queries split: 100%|██████████| 3237/3237 [00:00<00:00, 609953.82 examples/s]
+
+Casting the dataset:   0%|          | 0/3237 [00:00<?, ? examples/s][ACasting the dataset: 100%|██████████| 3237/3237 [00:00<00:00, 1467938.38 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/3633 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  96%|█████████▌| 3474/3633 [00:00<00:00, 34542.71 examples/s][AStandardizing text corpus format: 100%|██████████| 3633/3633 [00:00<00:00, 30944.56 examples/s]
+Prompt type 'document' not found in task metadata for task 'NFCorpus'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'NFCorpus'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/torch/_inductor/compile_fx.py:321: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+  warnings.warn(
+Evaluating task NFCorpus:  25%|██▌       | 2/8 [04:13<12:40, 126.72s/it]Evaluating task FiQA2018:  25%|██▌       | 2/8 [04:13<12:40, 126.72s/it]
+Standardizing text corpus format:   0%|          | 0/50000 [00:00<?, ? examples/s][A
+Standardizing text corpus format:   8%|▊         | 4066/50000 [00:00<00:01, 39885.03 examples/s][A
+Standardizing text corpus format:  16%|█▋        | 8207/50000 [00:00<00:01, 40768.45 examples/s][A
+Standardizing text corpus format:  25%|██▍       | 12354/50000 [00:00<00:00, 41085.39 examples/s][A
+Standardizing text corpus format:  37%|███▋      | 18526/50000 [00:00<00:00, 41109.68 examples/s][A
+Standardizing text corpus format:  45%|████▌     | 22650/50000 [00:00<00:00, 41148.66 examples/s][A
+Standardizing text corpus format:  54%|█████▎    | 26819/50000 [00:00<00:00, 41316.58 examples/s][A
+Standardizing text corpus format:  62%|██████▏   | 30961/50000 [00:00<00:00, 41345.69 examples/s][A
+Standardizing text corpus format:  74%|███████▍  | 37151/50000 [00:00<00:00, 41162.98 examples/s][A
+Standardizing text corpus format:  83%|████████▎ | 41309/50000 [00:01<00:00, 41275.38 examples/s][A
+Standardizing text corpus format:  92%|█████████▏| 46025/50000 [00:01<00:00, 42930.56 examples/s][AStandardizing text corpus format: 100%|██████████| 50000/50000 [00:01<00:00, 39962.70 examples/s]
+Prompt type 'document' not found in task metadata for task 'FiQA2018'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'FiQA2018'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+
+Standardizing text corpus format:   0%|          | 0/7638 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  69%|██████▉   | 5283/7638 [00:00<00:00, 52604.67 examples/s][AStandardizing text corpus format: 100%|██████████| 7638/7638 [00:00<00:00, 48964.04 examples/s]
+Prompt type 'document' not found in task metadata for task 'FiQA2018'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'FiQA2018'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+Evaluating task FiQA2018:  38%|███▊      | 3/8 [36:55<1:14:17, 891.45s/it]Evaluating task ArguAna:  38%|███▊      | 3/8 [36:55<1:14:17, 891.45s/it] 
+Standardizing text corpus format:   0%|          | 0/8674 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  58%|█████▊    | 5034/8674 [00:00<00:00, 50134.46 examples/s][AStandardizing text corpus format: 100%|██████████| 8674/8674 [00:00<00:00, 46992.24 examples/s]
+Evaluating task ArguAna:  50%|█████     | 4/8 [43:39<47:17, 709.44s/it]  Evaluating task SCIDOCS:  50%|█████     | 4/8 [43:39<47:17, 709.44s/it]
+Standardizing text corpus format:   0%|          | 0/25657 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  18%|█▊        | 4595/25657 [00:00<00:00, 44635.03 examples/s][A
+Standardizing text corpus format:  38%|███▊      | 9748/25657 [00:00<00:00, 48636.99 examples/s][A
+Standardizing text corpus format:  58%|█████▊    | 14913/25657 [00:00<00:00, 50000.91 examples/s][A
+Standardizing text corpus format:  78%|███████▊  | 20000/25657 [00:00<00:00, 50328.83 examples/s][A
+Standardizing text corpus format:  98%|█████████▊| 25236/25657 [00:00<00:00, 51055.82 examples/s][AStandardizing text corpus format: 100%|██████████| 25657/25657 [00:00<00:00, 44602.70 examples/s]
+Evaluating task SCIDOCS:  62%|██████▎   | 5/8 [1:02:04<42:21, 847.06s/it]Evaluating task LEMBSummScreenFDRetrieval:  62%|██████▎   | 5/8 [1:02:04<42:21, 847.06s/it]
+Standardizing text corpus format:   0%|          | 0/336 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 336/336 [00:00<00:00, 10882.60 examples/s]
+Evaluating task LEMBSummScreenFDRetrieval:  75%|███████▌  | 6/8 [1:09:55<24:04, 722.34s/it]Evaluating task BelebeleRetrieval:  75%|███████▌  | 6/8 [1:09:55<24:04, 722.34s/it]        
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 41072.77 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 43296.96 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48436.28 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 45579.09 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 46161.94 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48893.30 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48440.87 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 44397.65 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 44594.01 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 49015.07 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 35487.64 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 39132.40 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48760.52 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 32647.79 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 46498.57 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 49479.55 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 44111.56 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 44474.82 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48259.27 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47205.27 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 32726.09 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 49622.29 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 40183.37 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 41262.38 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48433.99 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 46625.67 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 45697.13 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 49045.61 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 49024.46 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48770.98 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 49267.55 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 39527.64 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 38925.51 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 49472.37 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47787.18 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47032.80 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 48455.77 examples/s]
+Evaluating task BelebeleRetrieval:  88%|████████▊ | 7/8 [1:21:59<12:02, 722.88s/it]Evaluating task MLQARetrieval:  88%|████████▊ | 7/8 [1:21:59<12:02, 722.88s/it]    
+Standardizing text corpus format:   0%|          | 0/4646 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  95%|█████████▌| 4433/4646 [00:00<00:00, 44156.13 examples/s][AStandardizing text corpus format: 100%|██████████| 4646/4646 [00:00<00:00, 39376.29 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4646 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  95%|█████████▍| 4406/4646 [00:00<00:00, 43864.27 examples/s][AStandardizing text corpus format: 100%|██████████| 4646/4646 [00:00<00:00, 39210.07 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4053 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4053/4053 [00:00<00:00, 47967.97 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4053 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4053/4053 [00:00<00:00, 47847.95 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4606 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4606/4606 [00:00<00:00, 47941.21 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4032 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4032/4032 [00:00<00:00, 49416.99 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/9916 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  56%|█████▌    | 5507/9916 [00:00<00:00, 54862.86 examples/s][AStandardizing text corpus format: 100%|██████████| 9916/9916 [00:00<00:00, 47202.27 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4621 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4621/4621 [00:00<00:00, 48275.23 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4059 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4059/4059 [00:00<00:00, 47532.93 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4759 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4759/4759 [00:00<00:00, 48160.49 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4468 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4468/4468 [00:00<00:00, 47027.79 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4761 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4761/4761 [00:00<00:00, 49436.98 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4761 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4761/4761 [00:00<00:00, 50529.05 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4099 [00:00<?, ? examples/s][A
+Standardizing text corpus format: 100%|██████████| 4099/4099 [00:00<00:00, 35607.30 examples/s][AStandardizing text corpus format: 100%|██████████| 4099/4099 [00:00<00:00, 35157.67 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4099 [00:00<?, ? examples/s][A
+Standardizing text corpus format: 100%|██████████| 4099/4099 [00:00<00:00, 36057.54 examples/s][AStandardizing text corpus format: 100%|██████████| 4099/4099 [00:00<00:00, 35584.38 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4795 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  87%|████████▋ | 4158/4795 [00:00<00:00, 41429.01 examples/s][AStandardizing text corpus format: 100%|██████████| 4795/4795 [00:00<00:00, 38054.86 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4795 [00:00<?, ? examples/s][A
+Standardizing text corpus format:  88%|████████▊ | 4205/4795 [00:00<00:00, 41892.73 examples/s][AStandardizing text corpus format: 100%|██████████| 4795/4795 [00:00<00:00, 38323.38 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4546 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4546/4546 [00:00<00:00, 49316.93 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/4546 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 4546/4546 [00:00<00:00, 50202.49 examples/s]
+Evaluating task MLQARetrieval: 100%|██████████| 8/8 [2:37:05<00:00, 1913.76s/it]Evaluating task MLQARetrieval: 100%|██████████| 8/8 [2:37:05<00:00, 1178.17s/it]
+SciFact                      nDCG@10=0.7966 R@10=0.9406 subsets=1
+NFCorpus                     nDCG@10=0.4201 R@10=0.2056 subsets=1
+FiQA2018                     nDCG@10=0.6223 R@10=0.6976 subsets=1
+ArguAna                      nDCG@10=0.6820 R@10=0.9346 subsets=1
+SCIDOCS                      nDCG@10=0.2918 R@10=0.3139 subsets=1
+LEMBSummScreenFDRetrieval    nDCG@10=0.9858 R@10=0.9970 subsets=1
+BelebeleRetrieval            nDCG@10=0.9493 R@10=0.9839 subsets=37
+MLQARetrieval                nDCG@10=0.7325 R@10=0.8432 subsets=19

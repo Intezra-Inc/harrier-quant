@@ -1,0 +1,30 @@
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 133802.41 examples/s]
+Casting the dataset:   0%|          | 0/1000 [00:00<?, ? examples/s]Casting the dataset: 100%|██████████| 1000/1000 [00:00<00:00, 358579.46 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 140569.21 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 119044.76 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 186173.55 examples/s]
+Casting the dataset:   0%|          | 0/1000 [00:00<?, ? examples/s]Casting the dataset: 100%|██████████| 1000/1000 [00:00<00:00, 461521.13 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 67939.35 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 168101.64 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 166997.29 examples/s]
+Casting the dataset:   0%|          | 0/1000 [00:00<?, ? examples/s]Casting the dataset: 100%|██████████| 1000/1000 [00:00<00:00, 376982.20 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 169186.56 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 223469.76 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 265563.13 examples/s]
+Casting the dataset:   0%|          | 0/1000 [00:00<?, ? examples/s]Casting the dataset: 100%|██████████| 1000/1000 [00:00<00:00, 381335.03 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 101152.88 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 154185.35 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 184267.81 examples/s]
+Casting the dataset:   0%|          | 0/1000 [00:00<?, ? examples/s]Casting the dataset: 100%|██████████| 1000/1000 [00:00<00:00, 376305.76 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 137082.20 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 116321.04 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 237368.65 examples/s]
+Casting the dataset:   0%|          | 0/1000 [00:00<?, ? examples/s]Casting the dataset: 100%|██████████| 1000/1000 [00:00<00:00, 382168.93 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 110417.10 examples/s]
+Generating test split:   0%|          | 0/1000 [00:00<?, ? examples/s]Generating test split: 100%|██████████| 1000/1000 [00:00<00:00, 230976.60 examples/s]
+short_en 500 queries 250 median tokens 103
+long 500 queries 0 median tokens 5925
+multilingual 500 queries 250 median tokens 41
+code 500 queries 250 median tokens 79
+total 2000
+exit=0

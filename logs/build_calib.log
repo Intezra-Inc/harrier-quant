@@ -1,0 +1,76 @@
+gooaq: 200 samples
+multilingual: 120 samples
+<unknown>:337: SyntaxWarning: invalid escape sequence '\['
+<unknown>:350: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:352: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:354: SyntaxWarning: invalid escape sequence '\('
+<unknown>:356: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:358: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:586: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:588: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:590: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:704: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:737: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:739: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:765: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:768: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:788: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:792: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:866: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:870: SyntaxWarning: invalid escape sequence '\s'
+<unknown>:1144: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:1478: SyntaxWarning: invalid escape sequence '\.'
+<unknown>:1523: SyntaxWarning: invalid escape sequence '\.'
+code: 80 samples
+fineweb_edu: 112 samples
+{
+  "seed": 42,
+  "max_tokens": 2048,
+  "n": 512,
+  "total_tokens": 206837,
+  "truncated": 20,
+  "by_source": {
+    "aya": 60,
+    "code": 80,
+    "fineweb2": 60,
+    "fineweb_edu": 112,
+    "gooaq": 200
+  },
+  "by_bucket": {
+    "code": 80,
+    "long_en": 46,
+    "multilingual": 120,
+    "short_en": 266
+  },
+  "by_role": {
+    "passage": 332,
+    "query": 180
+  },
+  "by_lang": {
+    "ar": 20,
+    "de": 20,
+    "en": 312,
+    "es": 20,
+    "go": 10,
+    "hi": 20,
+    "ja": 20,
+    "java": 10,
+    "javascript": 10,
+    "python": 40,
+    "typescript": 10,
+    "zh": 20
+  },
+  "code_file_licenses": {
+    "bsd-2-clause": 7,
+    "bsd-3-clause": 13,
+    "apache-2.0": 47,
+    "mit": 13
+  },
+  "prompts": {
+    "web": "Instruct: Given a web search query, retrieve relevant passages that answer the query\nQuery: ",
+    "qa": "Instruct: Given a question, retrieve passages that answer the question\nQuery: ",
+    "code": "Instruct: Given a natural language description of a function, retrieve the code that implements it\nQuery: "
+  },
+  "sha256_calib_jsonl": "0cdc0751f76ea0543132b3d23ce3552a51a7a9af4563507e84a484c019ba8762"
+}
+exit=0

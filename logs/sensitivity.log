@@ -1,0 +1,76 @@
+Loading weights:   0%|          | 0/808 [00:00<?, ?it/s]Loading weights:   0%|          | 1/808 [00:00<05:43,  2.35it/s]Loading weights:   1%|          | 5/808 [00:00<01:09, 11.52it/s]Loading weights:   2%|▏         | 17/808 [00:00<00:20, 39.28it/s]Loading weights:   3%|▎         | 24/808 [00:00<00:19, 40.39it/s]Loading weights:   5%|▍         | 40/808 [00:00<00:11, 69.70it/s]Loading weights:   7%|▋         | 55/808 [00:01<00:08, 88.72it/s]Loading weights:   8%|▊         | 66/808 [00:01<00:07, 93.74it/s]Loading weights:  10%|▉         | 77/808 [00:01<00:07, 93.15it/s]Loading weights:  11%|█         | 88/808 [00:01<00:08, 88.29it/s]Loading weights:  12%|█▏        | 98/808 [00:01<00:07, 90.03it/s]Loading weights:  13%|█▎        | 108/808 [00:01<00:07, 92.30it/s]Loading weights:  15%|█▍        | 120/808 [00:01<00:06, 99.09it/s]Loading weights:  16%|█▋        | 133/808 [00:01<00:06, 98.99it/s]Loading weights:  18%|█▊        | 145/808 [00:01<00:06, 104.56it/s]Loading weights:  19%|█▉        | 156/808 [00:02<00:06, 98.32it/s] Loading weights:  21%|██        | 167/808 [00:02<00:06, 94.07it/s]Loading weights:  22%|██▏       | 177/808 [00:02<00:07, 87.44it/s]Loading weights:  23%|██▎       | 187/808 [00:02<00:07, 82.72it/s]Loading weights:  25%|██▍       | 200/808 [00:02<00:06, 86.89it/s]Loading weights:  26%|██▌       | 212/808 [00:02<00:06, 94.08it/s]Loading weights:  28%|██▊       | 224/808 [00:02<00:05, 99.33it/s]Loading weights:  29%|██▉       | 235/808 [00:02<00:07, 79.71it/s]Loading weights:  31%|███       | 251/808 [00:03<00:05, 96.90it/s]Loading weights:  33%|███▎      | 263/808 [00:03<00:05, 101.12it/s]Loading weights:  34%|███▍      | 274/808 [00:03<00:05, 100.10it/s]Loading weights:  35%|███▌      | 285/808 [00:03<00:05, 93.17it/s] Loading weights:  37%|███▋      | 295/808 [00:03<00:05, 87.10it/s]Loading weights:  38%|███▊      | 305/808 [00:03<00:06, 80.37it/s]Loading weights:  39%|███▉      | 316/808 [00:03<00:05, 85.15it/s]Loading weights:  41%|████      | 328/808 [00:04<00:06, 75.95it/s]Loading weights:  42%|████▏     | 342/808 [00:04<00:05, 87.38it/s]Loading weights:  44%|████▍     | 354/808 [00:04<00:04, 91.48it/s]Loading weights:  45%|████▌     | 364/808 [00:04<00:04, 92.72it/s]Loading weights:  46%|████▋     | 374/808 [00:04<00:04, 86.96it/s]Loading weights:  47%|████▋     | 383/808 [00:04<00:05, 78.42it/s]Loading weights:  49%|████▉     | 394/808 [00:04<00:04, 83.32it/s]Loading weights:  50%|█████     | 406/808 [00:04<00:04, 89.97it/s]Loading weights:  51%|█████▏    | 416/808 [00:05<00:04, 90.55it/s]Loading weights:  53%|█████▎    | 426/808 [00:05<00:04, 85.59it/s]Loading weights:  54%|█████▍    | 435/808 [00:05<00:04, 77.08it/s]Loading weights:  55%|█████▌    | 446/808 [00:05<00:04, 82.13it/s]Loading weights:  57%|█████▋    | 458/808 [00:05<00:03, 88.68it/s]Loading weights:  58%|█████▊    | 468/808 [00:05<00:03, 89.72it/s]Loading weights:  59%|█████▉    | 478/808 [00:05<00:03, 83.95it/s]Loading weights:  60%|██████    | 487/808 [00:05<00:04, 76.83it/s]Loading weights:  62%|██████▏   | 498/808 [00:06<00:03, 81.62it/s]Loading weights:  63%|██████▎   | 510/808 [00:06<00:03, 88.50it/s]Loading weights:  64%|██████▍   | 520/808 [00:06<00:03, 89.48it/s]Loading weights:  66%|██████▌   | 530/808 [00:06<00:03, 84.95it/s]Loading weights:  67%|██████▋   | 539/808 [00:06<00:03, 75.85it/s]Loading weights:  68%|██████▊   | 550/808 [00:06<00:03, 82.19it/s]Loading weights:  70%|██████▉   | 562/808 [00:06<00:02, 87.53it/s]Loading weights:  71%|███████   | 571/808 [00:06<00:02, 86.59it/s]Loading weights:  72%|███████▏  | 580/808 [00:06<00:02, 80.80it/s]Loading weights:  73%|███████▎  | 589/808 [00:07<00:02, 74.23it/s]Loading weights:  74%|███████▍  | 599/808 [00:07<00:02, 71.83it/s]Loading weights:  76%|███████▌  | 614/808 [00:07<00:02, 86.87it/s]Loading weights:  77%|███████▋  | 623/808 [00:07<00:03, 55.74it/s]Loading weights:  80%|███████▉  | 645/808 [00:07<00:02, 80.15it/s]Loading weights:  82%|████████▏ | 664/808 [00:08<00:01, 91.03it/s]Loading weights:  84%|████████▍ | 679/808 [00:08<00:01, 92.23it/s]Loading weights:  86%|████████▌ | 693/808 [00:08<00:01, 98.39it/s]Loading weights:  87%|████████▋ | 705/808 [00:08<00:01, 99.84it/s]Loading weights:  89%|████████▊ | 716/808 [00:08<00:00, 98.61it/s]Loading weights:  90%|████████▉ | 727/808 [00:08<00:00, 92.20it/s]Loading weights:  91%|█████████ | 737/808 [00:08<00:00, 85.61it/s]Loading weights:  92%|█████████▏| 746/808 [00:08<00:00, 75.84it/s]Loading weights:  93%|█████████▎| 754/808 [00:09<00:00, 75.61it/s]Loading weights:  95%|█████████▍| 766/808 [00:09<00:00, 69.59it/s]Loading weights:  96%|█████████▋| 778/808 [00:09<00:00, 71.97it/s]Loading weights:  99%|█████████▊| 797/808 [00:09<00:00, 91.96it/s]Loading weights: 100%|██████████| 808/808 [00:09<00:00, 83.69it/s]
+bf16 reference: 22s for 64 samples
+all_int4               mean(1-cos)=0.06174 median=0.93976 p5=0.92383 min=0.88350  (18s)
+current_recipe         mean(1-cos)=0.04668 median=0.95348 p5=0.94081 min=0.90585  (10s)
+restore_layer_0        mean(1-cos)=0.06067 median=0.94039 p5=0.92506 min=0.88112  (10s)
+restore_layer_1        mean(1-cos)=0.06181 median=0.93964 p5=0.92362 min=0.88264  (9s)
+restore_layer_2        mean(1-cos)=0.06174 median=0.93970 p5=0.92347 min=0.88556  (10s)
+restore_layer_3        mean(1-cos)=0.06184 median=0.93945 p5=0.92350 min=0.88125  (9s)
+restore_layer_4        mean(1-cos)=0.06183 median=0.93965 p5=0.92279 min=0.88078  (10s)
+restore_layer_5        mean(1-cos)=0.06173 median=0.93974 p5=0.92388 min=0.87860  (9s)
+restore_layer_6        mean(1-cos)=0.06178 median=0.93978 p5=0.92356 min=0.88258  (9s)
+restore_layer_7        mean(1-cos)=0.06183 median=0.93962 p5=0.92375 min=0.87914  (9s)
+restore_layer_8        mean(1-cos)=0.06174 median=0.93994 p5=0.92282 min=0.88068  (9s)
+restore_layer_9        mean(1-cos)=0.06162 median=0.94034 p5=0.92293 min=0.88641  (9s)
+restore_layer_10       mean(1-cos)=0.06175 median=0.93967 p5=0.92283 min=0.88188  (9s)
+restore_layer_11       mean(1-cos)=0.06185 median=0.93958 p5=0.92311 min=0.88103  (9s)
+restore_layer_12       mean(1-cos)=0.06166 median=0.93997 p5=0.92419 min=0.88526  (10s)
+restore_layer_13       mean(1-cos)=0.06181 median=0.93953 p5=0.92274 min=0.88004  (9s)
+restore_layer_14       mean(1-cos)=0.06170 median=0.93970 p5=0.92389 min=0.87813  (10s)
+restore_layer_15       mean(1-cos)=0.06181 median=0.93968 p5=0.92314 min=0.88380  (9s)
+restore_layer_16       mean(1-cos)=0.06175 median=0.93963 p5=0.92367 min=0.88090  (9s)
+restore_layer_17       mean(1-cos)=0.06156 median=0.93986 p5=0.92345 min=0.89155  (10s)
+restore_layer_18       mean(1-cos)=0.06176 median=0.93980 p5=0.92398 min=0.88117  (9s)
+restore_layer_19       mean(1-cos)=0.06166 median=0.93987 p5=0.92360 min=0.87921  (9s)
+restore_layer_20       mean(1-cos)=0.06163 median=0.93987 p5=0.92307 min=0.88572  (10s)
+restore_layer_21       mean(1-cos)=0.06156 median=0.93996 p5=0.92380 min=0.88008  (9s)
+restore_layer_22       mean(1-cos)=0.06176 median=0.93991 p5=0.92291 min=0.88310  (10s)
+restore_layer_23       mean(1-cos)=0.06140 median=0.94033 p5=0.92409 min=0.87861  (9s)
+restore_layer_24       mean(1-cos)=0.06168 median=0.94004 p5=0.92397 min=0.88769  (10s)
+restore_layer_25       mean(1-cos)=0.06148 median=0.93976 p5=0.92428 min=0.87585  (9s)
+restore_layer_26       mean(1-cos)=0.06119 median=0.93978 p5=0.92535 min=0.88999  (10s)
+restore_layer_27       mean(1-cos)=0.06063 median=0.94003 p5=0.92529 min=0.89308  (10s)
+restore_layer_28       mean(1-cos)=0.06191 median=0.93985 p5=0.92250 min=0.87506  (9s)
+restore_layer_29       mean(1-cos)=0.06073 median=0.93954 p5=0.92471 min=0.89848  (9s)
+restore_layer_30       mean(1-cos)=0.06143 median=0.94044 p5=0.92444 min=0.87386  (10s)
+restore_layer_31       mean(1-cos)=0.06065 median=0.94052 p5=0.92637 min=0.89599  (9s)
+restore_layer_32       mean(1-cos)=0.06094 median=0.94084 p5=0.92576 min=0.88690  (10s)
+restore_layer_33       mean(1-cos)=0.06089 median=0.94074 p5=0.92394 min=0.88810  (9s)
+restore_layer_34       mean(1-cos)=0.06116 median=0.93986 p5=0.92459 min=0.88584  (10s)
+restore_layer_35       mean(1-cos)=0.05984 median=0.94113 p5=0.92850 min=0.88612  (9s)
+restore_layer_36       mean(1-cos)=0.06016 median=0.94143 p5=0.92673 min=0.87673  (10s)
+restore_layer_37       mean(1-cos)=0.06049 median=0.94098 p5=0.92474 min=0.88213  (9s)
+restore_layer_38       mean(1-cos)=0.06073 median=0.94053 p5=0.92491 min=0.89128  (10s)
+restore_layer_39       mean(1-cos)=0.06126 median=0.94021 p5=0.92417 min=0.88601  (9s)
+restore_layer_40       mean(1-cos)=0.06099 median=0.94070 p5=0.92440 min=0.88254  (10s)
+restore_layer_41       mean(1-cos)=0.06018 median=0.94191 p5=0.92629 min=0.88111  (9s)
+restore_layer_42       mean(1-cos)=0.06113 median=0.93997 p5=0.92425 min=0.88441  (9s)
+restore_layer_43       mean(1-cos)=0.06086 median=0.94046 p5=0.92427 min=0.88463  (10s)
+restore_layer_44       mean(1-cos)=0.06109 median=0.94071 p5=0.92416 min=0.88306  (10s)
+restore_layer_45       mean(1-cos)=0.06004 median=0.94119 p5=0.92550 min=0.89049  (9s)
+restore_layer_46       mean(1-cos)=0.06058 median=0.94070 p5=0.92512 min=0.88641  (10s)
+restore_layer_47       mean(1-cos)=0.05947 median=0.94248 p5=0.92624 min=0.88555  (9s)
+restore_layer_48       mean(1-cos)=0.06083 median=0.94030 p5=0.92503 min=0.88662  (10s)
+restore_layer_49       mean(1-cos)=0.06037 median=0.94135 p5=0.92564 min=0.88370  (9s)
+restore_layer_50       mean(1-cos)=0.06013 median=0.94159 p5=0.92575 min=0.88462  (10s)
+restore_layer_51       mean(1-cos)=0.05916 median=0.94237 p5=0.92706 min=0.88767  (9s)
+restore_layer_52       mean(1-cos)=0.05987 median=0.94194 p5=0.92629 min=0.88652  (10s)
+restore_layer_53       mean(1-cos)=0.05756 median=0.94433 p5=0.92731 min=0.89068  (10s)
+restore_layer_54       mean(1-cos)=0.05853 median=0.94265 p5=0.92630 min=0.89147  (9s)
+restore_layer_55       mean(1-cos)=0.05899 median=0.94214 p5=0.92677 min=0.88784  (10s)
+restore_layer_56       mean(1-cos)=0.06014 median=0.94179 p5=0.92693 min=0.88643  (9s)
+restore_layer_57       mean(1-cos)=0.06021 median=0.94115 p5=0.92521 min=0.88381  (10s)
+restore_layer_58       mean(1-cos)=0.05955 median=0.94189 p5=0.92594 min=0.88597  (9s)
+restore_layer_59       mean(1-cos)=0.05798 median=0.94289 p5=0.92970 min=0.89024  (10s)
+restore_layer_60       mean(1-cos)=0.05921 median=0.94204 p5=0.92688 min=0.88870  (9s)
+restore_layer_61       mean(1-cos)=0.05955 median=0.94184 p5=0.92577 min=0.88532  (10s)
+restore_type_q_proj    mean(1-cos)=0.05974 median=0.94149 p5=0.92530 min=0.90181  (10s)
+restore_type_k_proj    mean(1-cos)=0.05704 median=0.94339 p5=0.93007 min=0.89405  (10s)
+restore_type_v_proj    mean(1-cos)=0.04386 median=0.95731 p5=0.94303 min=0.91128  (10s)
+restore_type_o_proj    mean(1-cos)=0.05385 median=0.94797 p5=0.93176 min=0.89835  (10s)
+restore_type_gate_proj mean(1-cos)=0.05842 median=0.94243 p5=0.92798 min=0.89775  (15s)
+restore_type_up_proj   mean(1-cos)=0.05585 median=0.94486 p5=0.93115 min=0.90851  (17s)
+restore_type_down_proj mean(1-cos)=0.04390 median=0.95787 p5=0.94696 min=0.90736  (16s)
+all_fp8                mean(1-cos)=0.00152 median=0.99852 p5=0.99793 min=0.99722  (17s)
+top layers by FP8 gain: [53, 59, 54, 55, 51, 60, 47, 61, 58, 35, 52, 45, 50, 56, 36, 41, 57, 49, 37, 46, 27, 31, 0, 29]
+exit=0

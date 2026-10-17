@@ -1,0 +1,1 @@
+CTXG64 w4a16-gptq-late12-attn-g64_b21.5_eager_2048 Available KV cache memory: 1.22 GiB GPU KV cache size: 2,245 tokens | RESULT {"model": "w4a16-gptq-late12-attn-g64", "max_len": 2048, "budget_gib": 21.5, "eager": true, "chunked": 2048, "util": 0.2249, "ok": true, "long_s": 0.85, "short32_s

@@ -1,0 +1,1 @@
+CTXR3 w4a16-gptq-late12-attn-down_b23.2_eager_2048 Available KV cache memory: 0.57 GiB | RESULT {"model": "w4a16-gptq-late12-attn-down", "max_len": 2048, "budget_gib": 23.2, "eager": true, "chunked": 2048, "util": 0.2427, "ok": false, "error": "RuntimeError: Engine cor

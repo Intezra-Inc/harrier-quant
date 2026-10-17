@@ -1,0 +1,3 @@
+SERVE OK {"model": "w4a16-gptq-late12-attn-g64", "max_len": 8192, "dim": 5376, "norms": [1.0, 1.0, 1.0], "q_doc_scores": [68.03, 34.12], "long_doc_tokens": 8192, "long_ok": true}
+rc=0
+SERVE TESTS DONE U24=0.2375 U32=0.318

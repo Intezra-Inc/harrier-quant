@@ -1,0 +1,2 @@
+NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 615.71.09
+0.31.0 2.13.0+cu130

@@ -1,0 +1,11 @@
+[2026-10-12T12:43:22Z] killing orphaned process 49080 on GPU 2
+[2026-10-12T12:43:32Z] START build w4a16-gptq-late12-attn-g64 gpu2
+[2026-10-12T12:59:59Z] END build w4a16-gptq-late12-attn-g64 exit=0
+[2026-10-12T12:59:59Z] START cos w4a16-gptq-late12-attn-g64
+[2026-10-12T13:07:25Z] END cos w4a16-gptq-late12-attn-g64 exit=0
+w4a16-gptq-late12-attn-g64 vs bf16-vllm: PASS
+  short_en      n= 500 median=0.99614 p5=0.99377 p1=0.99244 min=0.99107
+  long          n= 500 median=0.99454 p5=0.99287 p1=0.99221 min=0.99010
+  multilingual  n= 500 median=0.99225 p5=0.98669 p1=0.98377 min=0.98176
+  code          n= 500 median=0.99319 p5=0.98981 p1=0.98835 min=0.98544
+  all           n=2000 median=0.99449 p5=0.98865 p1=0.98626 min=0.98176

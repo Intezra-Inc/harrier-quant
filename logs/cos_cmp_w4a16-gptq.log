@@ -1,0 +1,8 @@
+[2026-10-12T11:13:06Z] START cmp-w4a16-gptq
+w4a16-gptq vs bf16-vllm: FAIL (p5 < 0.98)
+  short_en      n= 500 median=0.98712 p5=0.98184 p1=0.98059 min=0.97967
+  long          n= 500 median=0.97419 p5=0.96886 p1=0.96543 min=0.92802
+  multilingual  n= 500 median=0.98038 p5=0.97387 p1=0.96988 min=0.96559
+  code          n= 500 median=0.97965 p5=0.97116 p1=0.96430 min=0.95559
+  all           n=2000 median=0.98059 p5=0.97103 p1=0.96683 min=0.92802
+[2026-10-12T11:13:06Z] END cmp-w4a16-gptq exit=0

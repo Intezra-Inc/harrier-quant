@@ -1,0 +1,163 @@
+[2026-10-12T12:48:04Z] START mteb-vllm-w4a16-gptq-late12-attn-down gpu0
+(MainProcess pid=73730) INFO 10-12 08:48:13 [api_utils.py:286] non-default args: {'runner': 'pooling', 'max_model_len': 8192, 'gpu_memory_utilization': 0.85, 'max_num_batched_tokens': 16384, 'disable_log_stats': True, 'enable_chunked_prefill': False, 'pooler_config': {'seq_pooling_type': 'LAST', 'use_activation': True}, 'model': 'w4a16-gptq-late12-attn-down'}
+(MainProcess pid=73730) INFO 10-12 08:48:13 [model.py:1328] Resolved `--convert auto` to `--convert embed`. Pass the value explicitly to silence this message.
+(MainProcess pid=73730) INFO 10-12 08:48:13 [model.py:699] Resolved architecture: Gemma3TextModel
+(MainProcess pid=73730) INFO 10-12 08:48:13 [config.py:1011] Found sentence-transformers modules configuration.
+(MainProcess pid=73730) INFO 10-12 08:48:13 [config.py:1034] Found pooling configuration.
+(MainProcess pid=73730) INFO 10-12 08:48:13 [model.py:2109] Using max model len 8192
+(MainProcess pid=73730) INFO 10-12 08:48:13 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+(MainProcess pid=73730) WARNING 10-12 08:48:13 [vllm.py:1920] Pooling models do not support full cudagraphs. Overriding cudagraph_mode to PIECEWISE.
+(EngineCore pid=74141) INFO 10-12 08:48:20 [core.py:129] Initializing a V1 LLM engine (v0.31.0) with config: model='w4a16-gptq-late12-attn-down', speculative_config=None, tokenizer='w4a16-gptq-late12-attn-down', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=compressed-tensors, quantization_config=None, enforce_eager=False, aux_output_config=AuxOutputConfig(enable_return_routed_experts=False, max_bytes=None), kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=w4a16-gptq-late12-attn-down, enable_prefix_caching=True, enable_chunked_prefill=False, pooler_config=PoolerConfig(task=None, pooling_type=None, seq_pooling_type='LAST', tok_pooling_type='ALL', use_activation=True, dimensions=None, enable_chunked_processing=False, max_embed_len=None, logit_mean=None, logit_sigma=None, step_tag_id=None, returned_token_ids=None), compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::qwen4_exp_ple_short_conv', 'vllm::qwen4_exp_qsa_with_output', 'vllm::linear_attention', 'vllm::qwen_gdn_attention_core', 'vllm::qwen_gdn_attention_core_fused_norm_packed', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.PIECEWISE: 1>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)
+(EngineCore pid=74141) INFO 10-12 08:48:21 [parallel_state.py:1825] world_size=1 rank=0 local_rank=0 distributed_init_method=file:///tmp/vllm_dist_834c42f980f147d985cbbf69e406140a backend=nccl
+(EngineCore pid=74141) INFO 10-12 08:48:21 [parallel_state.py:2269] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, ETP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=74141) INFO 10-12 08:48:21 [gpu_worker.py:479] Using V2 Model Runner
+(EngineCore pid=74141) INFO 10-12 08:48:22 [model_runner.py:375] Loading model from scratch...
+(EngineCore pid=74141) INFO 10-12 08:48:22 [__init__.py:758] Selected CutlassFP8ScaledMMLinearKernel for CompressedTensorsW8A8Fp8
+(EngineCore pid=74141) INFO 10-12 08:48:22 [deep_gemm.py:197] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230] Failed to set DeepGEMM PDL on vllm.third_party.deep_gemm: Assertion error (/workspace/.deps/deepgemm-src/third-party/deep_jit/include/deep_jit/backend/cuda/backend.hpp:200): not home_path.empty() and std::filesystem::exists(home_path)
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230] C++ trace (most recent call first):
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230]   #0 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x113d75 deep_jit::CUDA::find_cuda_toolkit(deep_jit::Env const&) at ??:0
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230]   #1 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x11b19a std::_Function_handler<std::shared_ptr<deep_jit::Runtime<deep_jit::CUDA> > (), deep_gemm::init_jit(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)::{lambda()#1}>::_M_invoke(std::_Any_data const&) at ??:0
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230]   #2 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x6b4de deep_jit::LazyInit<deep_jit::Runtime<deep_jit::CUDA> >::operator->() [clone .constprop.0] at ??:0
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230]   #3 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0x6b6cc pybind11::cpp_function::initialize<deep_gemm::config::register_apis(pybind11::module_&)::{lambda(bool const&)#1}, void, bool const&, pybind11::name, pybind11::scope, pybind11::sibling>(deep_gemm::config::register_apis(pybind11::module_&)::{lambda(bool const&)#1}&&, void (*)(bool const&), pybind11::name const&, pybind11::scope const&, pybind11::sibling const&)::{lambda(pybind11::detail::function_call&)#1}::_FUN(pybind11::detail::function_call&) at ??:0
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230]   #4 /data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/vllm/third_party/deep_gemm/_C.cpython-312-x86_64-linux-gnu.so+0xe0528 pybind11::cpp_function::dispatcher(_object*, _object* const*, unsigned long, _object*) at ??:0
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230]   #5 VLLM::EngineCore+0x1605ea6 cfunction_vectorcall_FASTCALL_KEYWORDS.llvm.5263393066707181687 at ??:0
+(EngineCore pid=74141) WARNING 10-12 08:48:22 [deep_gemm.py:230] 
+(EngineCore pid=74141) INFO 10-12 08:48:22 [deep_gemm.py:136] DeepGEMM E8M0 enabled on current platform.
+(EngineCore pid=74141) INFO 10-12 08:48:23 [cuda.py:526] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=74141) INFO 10-12 08:48:23 [flash_attn.py:1167] Using FlashAttention version 3
+(EngineCore pid=74141) INFO 10-12 08:48:23 [__init__.py:870] Using MacheteLinearKernel for mixed-precision linear
+(EngineCore pid=74141) INFO 10-12 08:48:23 [compressed_tensors_wNa16.py:138] Using MacheteLinearKernel for CompressedTensorsWNA16
+(EngineCore pid=74141) INFO 10-12 08:48:23 [weight_utils.py:1063] Filesystem type for checkpoints: EXT4. Checkpoint size: 21.26 GiB. Available RAM: 193.45 GiB.
+(EngineCore pid=74141) INFO 10-12 08:48:23 [weight_utils.py:1086] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:03<00:03,  3.20s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.57s/it]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:03<00:00,  1.82s/it]
+
+(EngineCore pid=74141) INFO 10-12 08:48:27 [default_loader.py:484] Loading weights took 4.10 seconds
+(EngineCore pid=74141) INFO 10-12 08:48:28 [model_runner.py:407] Model loading took 21.83 GiB memory and 6.618498 seconds
+(EngineCore pid=74141) INFO 10-12 08:48:28 [torch_utils.py:286] Reducing Torch threads from 64 to 1 for serving. Set OMP_NUM_THREADS in the external environment to override.
+(EngineCore pid=74141) INFO 10-12 08:48:28 [utils.py:343] Using LBNHC KV cache layout.
+(EngineCore pid=74141) INFO 10-12 08:48:30 [caching.py:342] reconstructed serializable fn from standalone compile artifacts. num_artifacts=6 num_submods=63
+(EngineCore pid=74141) INFO 10-12 08:48:30 [decorators.py:312] Directly load AOT compilation from path /home/user/.cache/vllm/torch_compile_cache/torch_aot_compile/538f6cfaf7e12a3813e26fc1b232a49404ab9d1b4c432b6436d65811d33710a8/rank_0_0/model
+(EngineCore pid=74141) INFO 10-12 08:48:30 [monitor.py:53] torch.compile took 0.76 s in total
+(EngineCore pid=74141) INFO 10-12 08:48:32 [monitor.py:81] Initial profiling/warmup run took 2.61 s
+(EngineCore pid=74141) WARNING 10-12 08:48:34 [kv_cache_utils.py:1574] Add 8 padding layers, may waste at most 15.38% KV cache memory
+Capturing CUDA graphs (PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   2%|▏         | 1/51 [00:00<00:05,  8.53it/s]Capturing CUDA graphs (PIECEWISE):   4%|▍         | 2/51 [00:00<00:05,  8.67it/s]Capturing CUDA graphs (PIECEWISE):   6%|▌         | 3/51 [00:00<00:05,  8.53it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 4/51 [00:00<00:05,  8.53it/s]Capturing CUDA graphs (PIECEWISE):  10%|▉         | 5/51 [00:00<00:05,  8.74it/s]Capturing CUDA graphs (PIECEWISE):  12%|█▏        | 6/51 [00:00<00:05,  8.89it/s]Capturing CUDA graphs (PIECEWISE):  14%|█▎        | 7/51 [00:00<00:04,  9.05it/s]Capturing CUDA graphs (PIECEWISE):  16%|█▌        | 8/51 [00:00<00:04,  9.18it/s]Capturing CUDA graphs (PIECEWISE):  18%|█▊        | 9/51 [00:01<00:04,  9.33it/s]Capturing CUDA graphs (PIECEWISE):  20%|█▉        | 10/51 [00:01<00:04,  9.44it/s]Capturing CUDA graphs (PIECEWISE):  22%|██▏       | 11/51 [00:01<00:04,  9.48it/s]Capturing CUDA graphs (PIECEWISE):  24%|██▎       | 12/51 [00:01<00:04,  9.53it/s]Capturing CUDA graphs (PIECEWISE):  25%|██▌       | 13/51 [00:01<00:03,  9.57it/s]Capturing CUDA graphs (PIECEWISE):  27%|██▋       | 14/51 [00:01<00:03,  9.58it/s]Capturing CUDA graphs (PIECEWISE):  29%|██▉       | 15/51 [00:01<00:03,  9.69it/s]Capturing CUDA graphs (PIECEWISE):  31%|███▏      | 16/51 [00:01<00:03,  9.74it/s]Capturing CUDA graphs (PIECEWISE):  35%|███▌      | 18/51 [00:01<00:03, 10.87it/s]Capturing CUDA graphs (PIECEWISE):  39%|███▉      | 20/51 [00:02<00:02, 11.54it/s]Capturing CUDA graphs (PIECEWISE):  43%|████▎     | 22/51 [00:02<00:02, 12.06it/s]Capturing CUDA graphs (PIECEWISE):  47%|████▋     | 24/51 [00:02<00:02, 12.29it/s]Capturing CUDA graphs (PIECEWISE):  51%|█████     | 26/51 [00:02<00:01, 12.58it/s]Capturing CUDA graphs (PIECEWISE):  55%|█████▍    | 28/51 [00:02<00:01, 12.69it/s]Capturing CUDA graphs (PIECEWISE):  59%|█████▉    | 30/51 [00:02<00:01, 12.80it/s]Capturing CUDA graphs (PIECEWISE):  63%|██████▎   | 32/51 [00:02<00:01, 12.83it/s]Capturing CUDA graphs (PIECEWISE):  67%|██████▋   | 34/51 [00:03<00:01, 13.33it/s]Capturing CUDA graphs (PIECEWISE):  71%|███████   | 36/51 [00:03<00:01, 13.76it/s]Capturing CUDA graphs (PIECEWISE):  75%|███████▍  | 38/51 [00:03<00:00, 14.03it/s]Capturing CUDA graphs (PIECEWISE):  78%|███████▊  | 40/51 [00:03<00:00, 14.23it/s]Capturing CUDA graphs (PIECEWISE):  82%|████████▏ | 42/51 [00:03<00:00, 14.56it/s]Capturing CUDA graphs (PIECEWISE):  86%|████████▋ | 44/51 [00:03<00:00, 14.74it/s]Capturing CUDA graphs (PIECEWISE):  90%|█████████ | 46/51 [00:03<00:00, 15.01it/s]Capturing CUDA graphs (PIECEWISE):  94%|█████████▍| 48/51 [00:04<00:00, 15.29it/s]Capturing CUDA graphs (PIECEWISE):  98%|█████████▊| 50/51 [00:04<00:00, 15.42it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:04<00:00, 12.11it/s]
+(EngineCore pid=74141) INFO 10-12 08:48:39 [model_runner.py:1087] Graph capturing finished in 5 secs, took 0.53 GiB
+(EngineCore pid=74141) INFO 10-12 08:48:39 [gpu_worker.py:692] Available KV cache memory: 54.44 GiB
+(EngineCore pid=74141) INFO 10-12 08:48:39 [gpu_worker.py:707] CUDA graph memory profiling is enabled (default since v0.21.0). The current --gpu-memory-utilization=0.8500 is equivalent to --gpu-memory-utilization=0.8443 without CUDA graph memory profiling. To maintain the same effective KV cache size as before, increase --gpu-memory-utilization to 0.8557. To disable, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=0.
+(EngineCore pid=74141) WARNING 10-12 08:48:39 [kv_cache_utils.py:1574] Add 8 padding layers, may waste at most 15.38% KV cache memory
+(EngineCore pid=74141) INFO 10-12 08:48:39 [kv_cache_utils.py:2464] GPU KV cache size: 101,758 tokens, Maximum concurrency for 8,192 tokens per request: 12.42x
+(EngineCore pid=74141) INFO 10-12 08:48:39 [kernel_warmup.py:172] JIT kernel warmup starting.
+(EngineCore pid=74141) INFO 10-12 08:48:39 [kernel_warmup.py:185] JIT kernel warmup finished in 0.00s.
+Capturing CUDA graphs (PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   2%|▏         | 1/51 [00:00<00:05,  8.37it/s]Capturing CUDA graphs (PIECEWISE):   4%|▍         | 2/51 [00:00<00:05,  8.79it/s]Capturing CUDA graphs (PIECEWISE):   6%|▌         | 3/51 [00:00<00:05,  9.01it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 4/51 [00:00<00:05,  9.18it/s]Capturing CUDA graphs (PIECEWISE):  10%|▉         | 5/51 [00:00<00:04,  9.28it/s]Capturing CUDA graphs (PIECEWISE):  12%|█▏        | 6/51 [00:00<00:04,  9.37it/s]Capturing CUDA graphs (PIECEWISE):  14%|█▎        | 7/51 [00:00<00:04,  9.45it/s]Capturing CUDA graphs (PIECEWISE):  16%|█▌        | 8/51 [00:00<00:04,  9.52it/s]Capturing CUDA graphs (PIECEWISE):  18%|█▊        | 9/51 [00:00<00:04,  9.64it/s]Capturing CUDA graphs (PIECEWISE):  22%|██▏       | 11/51 [00:01<00:04,  9.79it/s]Capturing CUDA graphs (PIECEWISE):  24%|██▎       | 12/51 [00:01<00:03,  9.81it/s]Capturing CUDA graphs (PIECEWISE):  27%|██▋       | 14/51 [00:01<00:03,  9.90it/s]Capturing CUDA graphs (PIECEWISE):  31%|███▏      | 16/51 [00:01<00:03, 10.03it/s]Capturing CUDA graphs (PIECEWISE):  35%|███▌      | 18/51 [00:01<00:03, 10.94it/s]Capturing CUDA graphs (PIECEWISE):  39%|███▉      | 20/51 [00:01<00:02, 11.63it/s]Capturing CUDA graphs (PIECEWISE):  43%|████▎     | 22/51 [00:02<00:02, 12.14it/s]Capturing CUDA graphs (PIECEWISE):  47%|████▋     | 24/51 [00:02<00:02, 12.46it/s]Capturing CUDA graphs (PIECEWISE):  51%|█████     | 26/51 [00:02<00:01, 12.73it/s]Capturing CUDA graphs (PIECEWISE):  55%|█████▍    | 28/51 [00:02<00:01, 12.92it/s]Capturing CUDA graphs (PIECEWISE):  59%|█████▉    | 30/51 [00:02<00:01, 13.01it/s]Capturing CUDA graphs (PIECEWISE):  63%|██████▎   | 32/51 [00:02<00:01, 13.06it/s]Capturing CUDA graphs (PIECEWISE):  67%|██████▋   | 34/51 [00:02<00:01, 13.50it/s]Capturing CUDA graphs (PIECEWISE):  71%|███████   | 36/51 [00:03<00:01, 13.88it/s]Capturing CUDA graphs (PIECEWISE):  75%|███████▍  | 38/51 [00:03<00:00, 14.20it/s]Capturing CUDA graphs (PIECEWISE):  78%|███████▊  | 40/51 [00:03<00:00, 14.40it/s]Capturing CUDA graphs (PIECEWISE):  82%|████████▏ | 42/51 [00:03<00:00, 14.69it/s]Capturing CUDA graphs (PIECEWISE):  86%|████████▋ | 44/51 [00:03<00:00, 14.95it/s]Capturing CUDA graphs (PIECEWISE):  90%|█████████ | 46/51 [00:03<00:00, 15.19it/s]Capturing CUDA graphs (PIECEWISE):  94%|█████████▍| 48/51 [00:03<00:00, 15.46it/s]Capturing CUDA graphs (PIECEWISE):  98%|█████████▊| 50/51 [00:04<00:00, 15.48it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:04<00:00, 12.43it/s]
+(EngineCore pid=74141) INFO 10-12 08:48:45 [model_runner.py:1087] Graph capturing finished in 5 secs, took 0.13 GiB
+(EngineCore pid=74141) INFO 10-12 08:48:45 [gpu_worker.py:892] CUDA graph pool memory: 0.13 GiB (actual), 0.53 GiB (estimated), difference: 0.4 GiB (316.9%).
+(EngineCore pid=74141) INFO 10-12 08:48:45 [gpu_worker.py:955] Free memory on device (92.6/93.13 GiB) on startup. Desired GPU memory utilization is (0.85, 79.16 GiB). Actual usage is 22.04 GiB for consumed memory (weights + non-torch), 2.68 GiB for peak activation, and 0.13 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=58157442151` (54.16 GiB) to fit into requested memory, or `--kv-cache-memory=72590278144` (67.6 GiB) to fully utilize gpu memory. Current kv cache memory in use is 54.44 GiB.
+(EngineCore pid=74141) INFO 10-12 08:48:45 [jit_monitor.py:84] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+(EngineCore pid=74141) INFO 10-12 08:48:45 [core.py:373] init engine (profile, create kv cache, warmup model) took 17.49 s (compilation: 0.76 s)
+(EngineCore pid=74141) INFO 10-12 08:48:45 [kv_cache_utils.py:772] kv cache group sizes [16, 16, 16, 16, 16, 16, 16]
+(EngineCore pid=74141) INFO 10-12 08:48:45 [kv_cache_utils.py:773] kv lcm block sizes 16
+(EngineCore pid=74141) INFO 10-12 08:48:46 [kernel.py:408] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'], gelu_and_mul_sparse=['triton', 'native'])
+(EngineCore pid=74141) INFO 10-12 08:48:46 [core.py:454] Resolved pooling config: pooling_type=LAST(source=user), tok_pooling_type=ALL(source=model_default), use_activation=True(source=user), supported_tasks=('embed', 'token_embed')
+(MainProcess pid=73730) INFO 10-12 08:48:48 [hf.py:646] Detected the chat template content format to be 'string'. You can set `--chat-template-content-format` to override this.
+(MainProcess pid=73730) INFO 10-12 08:48:48 [offline.py:49] Supported pooling task: embed
+(MainProcess pid=73730) INFO 10-12 08:48:48 [io_processor.py:79] Loaded prompt prefixes for input_type: ['web_search_query', 'sts_query', 'bitext_query']
+Evaluating tasks:   0%|          | 0/8 [00:00<?, ?it/s]Evaluating task SciFact:   0%|          | 0/8 [00:00<?, ?it/s]Prompt type 'document' not found in task metadata for task 'SciFact'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'SciFact'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+Evaluating task SciFact:  12%|█▎        | 1/8 [03:22<23:34, 202.10s/it]Evaluating task NFCorpus:  12%|█▎        | 1/8 [03:22<23:34, 202.10s/it]Prompt type 'document' not found in task metadata for task 'NFCorpus'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'NFCorpus'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+Evaluating task NFCorpus:  25%|██▌       | 2/8 [05:58<17:32, 175.36s/it]Evaluating task FiQA2018:  25%|██▌       | 2/8 [05:58<17:32, 175.36s/it]Prompt type 'document' not found in task metadata for task 'FiQA2018'.
+/data/models/harrier-quant/venv-serve/lib/python3.12/site-packages/mteb/models/abs_encoder.py:267: UserWarning: Prompt type 'document' not found in task metadata for task 'FiQA2018'.
+  instruction = self.get_instruction(task_metadata, prompt_type)
+Prompt type 'document' not found in task metadata for task 'FiQA2018'.
+Evaluating task FiQA2018:  38%|███▊      | 3/8 [27:16<56:33, 678.74s/it]Evaluating task ArguAna:  38%|███▊      | 3/8 [27:16<56:33, 678.74s/it] Evaluating task ArguAna:  50%|█████     | 4/8 [31:50<34:36, 519.01s/it]Evaluating task SCIDOCS:  50%|█████     | 4/8 [31:50<34:36, 519.01s/it]Evaluating task SCIDOCS:  62%|██████▎   | 5/8 [43:57<29:41, 593.78s/it]Evaluating task LEMBSummScreenFDRetrieval:  62%|██████▎   | 5/8 [43:57<29:41, 593.78s/it]
+Standardizing text corpus format:   0%|          | 0/336 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 336/336 [00:00<00:00, 10782.27 examples/s]
+Evaluating task LEMBSummScreenFDRetrieval:  75%|███████▌  | 6/8 [49:03<16:32, 496.19s/it]Evaluating task BelebeleRetrieval:  75%|███████▌  | 6/8 [49:03<16:32, 496.19s/it]        
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 41502.50 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 28258.90 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 46920.67 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 45006.82 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 30560.50 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 33396.21 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47090.15 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 31237.24 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 43722.40 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47260.85 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 37830.52 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 37589.44 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 33525.30 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 31621.38 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 31900.82 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 46588.53 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 30326.86 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 43120.91 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 33455.16 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 45460.65 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 32234.91 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 32576.60 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 40232.34 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 39502.47 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 46577.93 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 31616.01 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 44656.27 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47425.11 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47892.28 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 33743.06 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 33731.94 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 39322.61 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 38706.16 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 47346.13 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 32491.79 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 31227.24 examples/s]
+
+Standardizing text corpus format:   0%|          | 0/488 [00:00<?, ? examples/s][AStandardizing text corpus format: 100%|██████████| 488/488 [00:00<00:00, 46891.65 examples/s]
+Evaluating task BelebeleRetrieval:  88%|████████▊ | 7/8 [54:04<07:12, 432.27s/it]Evaluating task MLQARetrieval:  88%|████████▊ | 7/8 [54:04<07:12, 432.27s/it]    Evaluating task MLQARetrieval: 100%|██████████| 8/8 [1:41:08<00:00, 1193.74s/it]Evaluating task MLQARetrieval: 100%|██████████| 8/8 [1:41:08<00:00, 758.58s/it] 
+SciFact                      nDCG@10=0.7968 R@10=0.9433 subsets=1
+NFCorpus                     nDCG@10=0.4190 R@10=0.2055 subsets=1
+FiQA2018                     nDCG@10=0.6203 R@10=0.6964 subsets=1
+ArguAna                      nDCG@10=0.6812 R@10=0.9374 subsets=1
+SCIDOCS                      nDCG@10=0.2905 R@10=0.3129 subsets=1
+LEMBSummScreenFDRetrieval    nDCG@10=0.9818 R@10=0.9970 subsets=1
+BelebeleRetrieval            nDCG@10=0.9482 R@10=0.9838 subsets=37
+MLQARetrieval                nDCG@10=0.7270 R@10=0.8383 subsets=19
+[2026-10-12T14:29:57Z] END mteb-vllm-w4a16-gptq-late12-attn-down exit=0
